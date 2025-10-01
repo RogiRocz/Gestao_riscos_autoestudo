@@ -1,53 +1,66 @@
-# To learn more about how to use Nix to configure your environment
-# see: https://developers.google.com/idx/guides/customize-idx-env
 { pkgs, ... }: {
-  # Which nixpkgs channel to use.
-  channel = "stable-24.05"; # or "unstable"
-  # Use https://search.nixos.org/packages to find packages
+  # Canal do nixpkgs a ser utilizado.
+  channel = "stable-24.05";
+
+  # Pacotes de sistema para o ambiente de desenvolvimento.
   packages = [
-    # pkgs.go
-    # pkgs.python311
-    # pkgs.python311Packages.pip
-    # pkgs.nodejs_20
-    # pkgs.nodePackages.nodemon
+    # Dependências do Backend (Java/Maven)
+    pkgs.jdk11
+    pkgs.maven
+    
+    # Dependências do Frontend (Vue.js)
+    pkgs.nodejs_20
+    
+    # Dependência para o Banco de Dados
+    pkgs.postgresql
+    pkgs.git
+    pkgs.docker-compose
+
   ];
-  # Sets environment variables in the workspace
-  env = {};
-  idx = {
-    # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
-    extensions = [
-      # "vscodevim.vim"
-      "google.gemini-cli-vscode-ide-companion"
-    ];
-    # Enable previews
-    previews = {
-      enable = true;
-      previews = {
-        # web = {
-        #   # Example: run "npm run dev" with PORT set to IDX's defined port for previews,
-        #   # and show it in IDX's web preview panel
-        #   command = ["npm" "run" "dev"];
-        #   manager = "web";
-        #   env = {
-        #     # Environment variables to set for your server
-        #     PORT = "$PORT";
-        #   };
-        # };
-      };
+
+  # Extensões do VS Code para melhorar a experiência de desenvolvimento.
+  idx.extensions = [
+    # Suporte para Java
+    "vscjava.vscode-java-pack"
+    # Suporte para Vue.js (Volar)
+    "vue.volar"
+    # Linter para JavaScript/TypeScript
+    "dbaeumer.vscode-eslint"
+  ];
+
+  # Configurações do espaço de trabalho e ciclo de vida.
+  idx.workspace = {
+    # Comandos a serem executados na criação do workspace.
+    onCreate = {
+      # Instala as dependências do backend.
+      backend-install = "(cd Gestao_Riscos/Codigo/back-gestao-riscos && mvn install)";
+      # Instala as dependências do frontend.
+      frontend-install = "(cd Gestao_Riscos/Codigo/front-gestao-riscos && npm install)";
     };
-    # Workspace lifecycle hooks
-    workspace = {
-      # Runs when a workspace is first created
-      onCreate = {
-        # Example: install JS dependencies from NPM
-        # npm-install = "npm install";
-        # Open editors for the following files by default, if they exist:
-        default.openFiles = [ ".idx/dev.nix" "README.md" ];
-      };
-      # Runs when the workspace is (re)started
-      onStart = {
-        # Example: start a background task to watch and re-build backend code
-        # watch-backend = "npm run watch-backend";
+    
+    # Comandos a serem executados toda vez que o workspace for iniciado.
+    onStart = {
+      # Inicia o container do banco de dados PostgreSQL.
+      start-db = "(cd Gestao_Riscos/dev && docker-compose up -d)";
+      # Inicia a aplicação backend Spring Boot.
+      start-backend = "(cd Gestao_Riscos/Codigo/back-gestao-riscos && mvn spring-boot:run)";
+      # O frontend será iniciado pelo serviço de preview abaixo.
+    };
+  };
+
+  # Configuração do preview da aplicação web.
+  idx.previews = {
+    enable = true;
+    previews = {
+      # Preview para o frontend em Vue.js.
+      web = {
+        # Comando para iniciar o servidor de desenvolvimento do frontend.
+        command = [
+          "sh"
+          "-c"
+          "(cd Gestao_Riscos/Codigo/front-gestao-riscos && npm run serve -- --port $PORT)"
+        ];
+        manager = "web";
       };
     };
   };
