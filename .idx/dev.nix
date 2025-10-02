@@ -26,6 +26,10 @@
     "vue.volar"
     # Linter para JavaScript/TypeScript
     "dbaeumer.vscode-eslint"
+    # Formatador de código Prettier
+    "esbenp.prettier-vscode"
+    # Suporte do Gemini 
+    "google.gemini-cli-vscode-ide-companion"
   ];
 
   # Configurações do espaço de trabalho e ciclo de vida.
@@ -35,13 +39,11 @@
       # Instala as dependências do backend.
       backend-install = "(cd Gestao_Riscos/Codigo/back-gestao-riscos && mvn install)";
       # Instala as dependências do frontend.
-      frontend-install = "(cd Gestao_Riscos/Codigo/front-gestao-riscos && npm install)";
+      frontend-install = "(cd Gestao_Riscos/Codigo/front-gestao-riscos-vue3 && npm install)";
     };
     
     # Comandos a serem executados toda vez que o workspace for iniciado.
     onStart = {
-      # Inicia o container do banco de dados PostgreSQL.
-      start-db = "(cd Gestao_Riscos/dev && docker-compose up -d)";
       # Inicia a aplicação backend Spring Boot.
       start-backend = "(cd Gestao_Riscos/Codigo/back-gestao-riscos && mvn spring-boot:run)";
       # O frontend será iniciado pelo serviço de preview abaixo.
@@ -58,7 +60,7 @@
         command = [
           "sh"
           "-c"
-          "(cd Gestao_Riscos/Codigo/front-gestao-riscos && npm run serve -- --port $PORT)"
+          "(cd Gestao_Riscos/Codigo/front-gestao-riscos-vue3 && npm run dev -- --port $PORT)"
         ];
         manager = "web";
       };
