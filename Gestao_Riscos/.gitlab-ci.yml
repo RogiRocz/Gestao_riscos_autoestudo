@@ -1,0 +1,148 @@
+variables:
+  MAVEN_OPTS: "-Dhttps.protocols=TLSv1.2 -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true"
+  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
+  SONAR_OPTS: "-Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.gitlab.project_id=$CI_PROJECT_PATH -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.json_mode=CODECLIMATE -Dsonar.gitlab.failure_notification_mode=commit-status -Dsonar.branch.name=$CI_COMMIT_REF_NAME"
+
+stages:
+  - build
+  - static-analysis
+  - quality
+  - deploy
+
+build-backend:branch:
+  stage: build
+  tags:
+    - maven
+  except:
+    - master
+  cache:
+    paths:
+      - .m2/repository
+  script:
+    - 'cd Codigo/back-gestao-riscos'
+    - 'mvn $MAVEN_OPTS $MAVEN_CLI_OPTS package'
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - Codigo/back-gestao-riscos/target/classes/
+
+build-backend:master:
+  stage: build
+  tags:
+    - maven
+  only:
+    - master
+  cache:
+    paths:
+      - .m2/repository
+  script:
+    - 'cd Codigo/back-gestao-riscos'
+    - 'mvn $MAVEN_OPTS $MAVEN_CLI_OPTS package -P prod'
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - Codigo/back-gestao-riscos/target/classes/
+      - Codigo/back-gestao-riscos/target/ROOT.war
+      - Codigo/back-gestao-riscos/target/ROOT/
+
+build-frontend:branch:
+  stage: build
+  tags:
+    - node
+  except:
+    - master
+  cache:
+    paths:
+    - Codigo/front-gestao-riscos/node_modules/
+  script:
+    - 'cd Codigo/front-gestao-riscos'
+    - 'npm install'
+    - 'npm run lint'
+
+build-frontend:master:
+  stage: build
+  tags:
+    - node
+  only:
+    - master
+  cache:
+    paths:
+    - Codigo/front-gestao-riscos/node_modules/
+  script:
+    - 'cd Codigo/front-gestao-riscos'
+    - 'npm install'
+    - 'npm run build'
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - Codigo/front-gestao-riscos/dist
+
+sonar-runner:
+  stage: static-analysis
+  tags:
+    - sonar
+  script:
+    - 'cd Codigo'
+    - 'sonar-scanner $SONAR_OPTS'
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - codeclimate.json
+
+code_quality:
+  stage: quality
+  dependencies:
+    - sonar-runner
+  variables:
+    GIT_STRATEGY: none
+    DOCKER_DRIVER: overlay2
+  script:
+    - 'echo ok'
+  artifacts:
+    reports:
+      codequality: codeclimate.json
+    expire_in: 1 day
+
+deploy:
+  stage: deploy
+  when: manual
+  tags:
+    - deploy
+  dependencies:
+    - build-backend:master
+    - build-frontend:master
+  only:
+    - master
+  environment:
+    name: prod
+    url: http://riscos.quixada.ufc.br/
+    on_stop: undeploy
+  before_script:
+    - 'export RISCOS_USER=$RISCOS_USER'
+    - 'export RISCOS_PASSWORD=$RISCOS_PASSWORD'
+    - 'export RISCOS_DB=$RISCOS_DB'
+    - 'export RISCOS_URL=$RISCOS_URL'
+  script:
+    - 'docker-compose down'
+    - 'docker-compose up -d'
+  after_script:
+    - 'unset RISCOS_USER'
+    - 'unset RISCOS_PASSWORD'
+    - 'unset RISCOS_DB'
+    - 'unset RISCOS_URL'
+
+undeploy:
+  stage: deploy
+  when: manual
+  dependencies:
+    - build-backend:master
+    - build-frontend:master
+  only:
+    - master
+  tags:
+    - deploy
+  script:
+    - 'docker-compose down'
+  environment:
+    name: prod
+    action: stop

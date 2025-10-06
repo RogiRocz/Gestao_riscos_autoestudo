@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Secretaria da Governaça</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="../../css/style.css" media="screen,projection">
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <div class="navbar-fixed">
+            <nav class="z-depth-0 blue">
+                <div class="nav-wrapper blue">
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+
+                    <ul id="nav-mobile" class="right">
+                        <li>
+                            <a href="#!" data-target="notificacoes" class="dropdown-trigger waves-effect ">
+                                <i class="material-icons right">notifications</i>
+                                <span class="new badge light-blue darken-4">2</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#!">
+                                <i class="material-icons">settings</i>
+                            </a>
+                        </li>
+
+                        <!-- Abrir Dropdown Usuario -->
+                        <li>
+                            <a class="dropdown-trigger waves-effect" href="#!" data-target="account">
+                                <i class="material-icons left">account_circle</i>
+                                Secretária da Governaça
+                                <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Dropdown Usuario -->
+        <ul id="account" class="dropdown-content dropdown-content-menu">
+            <li>
+                <a href="#!">
+                    <i class="material-icons left">account_box</i>Meu Perfil</a>
+            </li>
+
+            <li class="divider"></li>
+            <li>
+                <a href="#!">
+                    <i class="material-icons left">exit_to_app</i>Sair</a>
+            </li>
+        </ul>
+
+        <!-- Dropdown Notificações -->
+        <div id="notificacoes" class="dropdown-content dropdown-content-menu notifications">
+            <div class="notifications-title">Notificações</div>
+
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title red-text">Aviso</span>
+                    <p>Risco
+                        <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de tratatamento</p>
+                </div>
+                <div class="card-action ">
+                    <a href="#!" class="blue-text">Visualizar</a>
+                    <a href="#!" class="blue-text">Remover</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title red-text">Aviso</span>
+                    <p>Risco
+                        <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de contigência</p>
+                </div>
+                <div class="card-action">
+                    <a href="#!" class="blue-text">Visualizar</a>
+                    <a href="#!" class="blue-text">Remover</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Menu Lateral-->
+        <ul class="sidenav sidenav-fixed z-depth-0 grey lighten-4" id="mobile-demo">
+            <li>
+                <div class="user-view">
+                    <a href="#user">
+                        <img src="../../img/Brasao%20Horizontal%20UFC%20Policromatico1.png">
+                    </a>
+                </div>
+            </li>
+
+            <div class="divider blue"></div>
+
+            <li class="no-padding">
+                <ul class="collapsible expandable">
+                    <a href="../index.html" style="color:inherit">
+                        <li class="active lighten-3">
+                            <div class="collapsible-header ">
+                                <i class="material-icons">web</i>Dashboard</div>
+                        </li>
+                    </a>
+                    <div class="divider" style="margin-top: 0;"></div>
+                    <li class="active grey lighten-4">
+                        <div class="collapsible-header ">
+                            <i class="material-icons ">business</i>Unidades
+                            <i class="material-icons arrow-rotate">arrow_drop_down</i>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="collapsible-body">
+                            <ul class="grey lighten-4">
+                                <li>
+                                    <a href="#!" class="waves-effect blue lighten-3">
+                                        <i class="material-icons">subdirectory_arrow_right</i>Campus Quixadá</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="waves-effect">
+                                        <i class="material-icons">subdirectory_arrow_right</i>Campus Sobral</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <div class="divider" style="margin-top: 0;"></div>
+                    <li class="grey lighten-4">
+                        <div class="collapsible-header">
+                            <i class="material-icons">description</i>Documentos
+                            <i class="material-icons arrow-rotate">arrow_drop_down</i>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="collapsible-body">
+                            <ul class="grey lighten-4">
+                                <li>
+                                    <a href="../Documentos/politicasRisco.html" class="waves-effect">
+                                        <i class="material-icons">subdirectory_arrow_right</i>Políticas de Riscos</a>
+                                </li>
+                                <li>
+                                    <a href="../Documentos/planoComunicao.html" class="waves-effect">
+                                        <i class="material-icons">subdirectory_arrow_right</i>Plano de Comunicação</a>
+                                </li>
+                                <li >
+                                    <a href="../Documentos/matrizResponsabilidade.html" class="waves-effect  ">
+                                        <i class="material-icons">subdirectory_arrow_right</i>Matriz de Responsabilidade</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+                </ul>
+
+            </li>
+        </ul>
+
+    </header>
+
+    <!-- CONTEUDO DA PAGINA -->
+    <main class="row">
+
+        <nav class="nav-extended  blue lighten-1">
+            <div class="nav-content">
+                <ul class="tabs tabs-transparent">
+                    <li class="tab">
+                        <a class="active" href="#listarRisco">Risco</a>
+                    </li>
+                    <li class="tab">
+                        <a href="#controleRisco">Controle</a>
+                    </li>
+                    <li class="tab">
+                        <a href="#obsevacoesRisco">Comunicação</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Listar Risco -->
+        <div class="col s12">
+
+            <div id="listarRisco">
+
+                <div class="card z-depth-0 ">
+                    <div class="card-content row no-padding">
+                        <span class="col s8">
+                            <h4>Lista de Riscos</h4>
+                        </span>
+
+                        <div class="input-field col s2">
+                            <select>
+                                <option value="1">Selecionar</option>
+                                <option value="2">Categoria</option>
+                                <option value="3">Nivel de risco</option>
+                                <option value="2">Processo</option>
+                            </select>
+                            <label>Listar por:</label>
+                        </div>
+
+
+                        <div class="input-field col s2">
+                            <select>
+                                <option value="1">Todos</option>
+                                <option value="2">Ensino</option>
+                                <option value="2">Infraestrutura</option>
+                            </select>
+                            <label>Filtrar por:</label>
+                        </div>
+
+
+                    </div>
+ 
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card white">
+                            <ul class=" collapsible col s12 white">
+                                <li class="card-content row">
+                                    <h6 class="col s9" style="font-weight: bold">Risco : Ausência de infraestrutura e equipamentos necessários para a realização do curso</h6>
+
+                                    <a class="dropdown-trigger col s2 black-text right-align" data-target="dropdown1">
+                                        <i class="material-icons right">settings_applications</i>Ações</a>
+                                    <ul id='dropdown1' class='dropdown-content'>
+                                        <li>
+                                            <a href="#!" style="padding-left: 5px">
+                                                <i style="width: 20px; margin: 0px 10px 0px 0px" class="material-icons">gavel</i>Reportar</a>
+                                        </li>
+                                        <li>
+                                            <a href="#modalMelhoria" style="padding-left: 5px" class="modal-trigger">
+                                                <i style="width: 20px; margin: 0px 10px 0px 0px" class="material-icons">add</i>Melhoria</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" style="padding-left: 5px">
+                                                <i style="width: 20px; margin: 0px 10px 0px 0px" class="material-icons">delete</i>Deletar</a>
+                                        </li>
+                            </ul>
+
+
+                                    <div id="modalMelhoria" class="modal">
+                                        <div class="modal-content">
+                                            <h4>Melhoria</h4>
+
+                                            <div class="row">
+
+                                                <div class="input-field col s12">
+                                                    <select>
+                                                        <option value="1">Concluída</option>
+                                                        <option value="2">Iniciada</option>
+                                                        <option value="3">Não iniciada</option>
+                                                        <option value="4">Não aplicável</option>
+                                                    </select>
+                                                    <label>Resposta ao Risco</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <i class="material-icons prefix">date_range</i>
+                                                    <input id="dataTratamento" type="text" class="datepicker">
+                                                    <label for="dataTratamento"> Data de Tratamento </label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <textarea id="observacoes" class="materialize-textarea"></textarea>
+                                                    <label for="observacoes">Observações</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <a href="#!" class="modal-close waves-effect red waves-green btn">Cancelar</a>
+                                            <a href="#!" class="modal-close waves-effect green waves-green btn">Enviar</a>
+
+                                        </div>
+                                    </div>
+
+                                    <span class="collapsible-header col s1" style="border: none;">Detalhes
+                                        <i class="material-icons">arrow_drop_down</i>
+                                    </span>
+
+                                    <table class="centered col s12">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Processo</th>
+                                                <th>Estratégia de Tratamento</th>
+                                                <th>Nível do Risco</th>
+                                                <th>Fatores</th>
+                                                <th>Responsável</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Capacitação dos Funcionários</td>
+                                                <td>Mitigação</td>
+                                                <td>Médio</td>
+                                                <td>Operacional</td>
+                                                <td>Germana Silva</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="card-content collapsible-body col s12 grey lighten-5">
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Descrição</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Falta de um centro de formação e equipamentos </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Causa</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Falta de um centro de formação e equipamentos próprio do setor de
+                                                            capacitação.
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Consequências</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Não realização ou comprometimento da qualidade dos cursos, gerando
+                                                            insatisf ação dos instrutores e serv idores.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Probabilidade</th>
+                                                        <th>Impacto</th>
+                                                        <th>Nivel de Risco</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>4</td>
+                                                        <td>8</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+
+                                        <div class="row">
+                                            <h6 class="col s9" style="font-weight: bold">Melhoria</h6>
+                                        </div>
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Data</th>
+                                                        <th>Responsável</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>20/02/2017</td>
+                                                        <td>Germana Silva</td>
+                                                        <td>Iniciada</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Observações</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Realização de um número menor de cursos, e comprometimento das metas
+                                                            de capacitação</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                    </div>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card ">
+                            <ul class=" collapsible col s12 white">
+                                <li class="card-content row">
+                                    <h6 class="col s9" style="font-weight: bold">Risco : Redução orçamentária dos recursos destinados à capacitação</h6>
+
+                                    <a class="dropdown-trigger col s2 black-text right-align" data-target="dropdown2">
+                                        <i class="material-icons right">settings_applications</i>Ações</a>
+                                    <ul id='dropdown2' class='dropdown-content'>
+                                        <li>
+                                            <a href="#!" style="padding-left: 5px">
+                                                <i style="width: 20px; margin: 0px 10px 0px 0px" class="material-icons">gavel</i>Reportar</a>
+                                        </li>
+                                        <li>
+                                            <a href="#modalMelhoria" style="padding-left: 5px" class="modal-trigger">
+                                                <i style="width: 20px; margin: 0px 10px 0px 0px" class="material-icons">edit</i>Melhoria</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" style="padding-left: 5px">
+                                                <i style="width: 20px; margin: 0px 10px 0px 0px" class="material-icons">delete</i>Deletar</a>
+                                        </li>
+                                    </ul>
+                                    <span class="collapsible-header col s1" style="border: none;">Detalhes
+                                        <i class="material-icons">arrow_drop_down</i>
+                                    </span>
+
+                                    <table class="centered col s12">
+                                        <thead>
+                                            <tr>
+                                                <th>Processo</th>
+                                                <th>Estratégia de Tratamento</th>
+                                                <th>Nível do Risco</th>
+                                                <th>Fatores</th>
+                                                <th>Responsável</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Capacitação dos Funcionários</td>
+                                                <td>Mitigação</td>
+                                                <td>Alto</td>
+                                                <td>Financeiro/Orçamentário</td>
+                                                <td>Germana Silva</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="card-content collapsible-body col s12 grey lighten-5">
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Descrição</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Corte no repasse dos recursos para capacitação causou redução orçamentária
+                                                            dos recursos</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Causa</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Corte no repasse dos recursos para capacitação</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Consequências</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Realização de um número menor de cursos, e comprometimento das metas
+                                                            de capacitação</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Probabilidade</th>
+                                                        <th>Impacto</th>
+                                                        <th>Nivel de Risco</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>3</td>
+                                                        <td>6</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+
+
+                                        <div class="row">
+                                            <h6 class="col s9" style="font-weight: bold">Melhoria</h6>
+                                        </div>
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Data</th>
+                                                        <th>Responsável</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>20/02/2017</td>
+                                                        <td>Germana Silva</td>
+                                                        <td>Iniciada</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="row">
+                                            <table class="col s12 highlight">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Observações</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Realização de um número menor de cursos, e comprometimento das metas
+                                                            de capacitação</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Controle Risco -->
+        <div class="col s12 ">
+           
+
+            <div id="controleRisco">
+                <!-- Titulo -->
+                <div class="card z-depth-0">
+                    <div class="card-content row no-padding">
+                        <span class="col s12">
+                            <h4> Controle de Riscos</h4>
+                        </span>
+                    </div>
+                </div>
+
+      
+
+                <div class="divider"></div>
+
+                <div class="card">
+
+                    <div class="row"></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Comunicação Risco -->
+        <div class="col s12 ">
+            <div id="obsevacoesRisco">
+                <!-- Titulo -->
+                <div class="card z-depth-0">
+                    <div class="card-content row no-padding">
+                        <span class="col s8">
+                            <h4> Comunicação de Riscos</h4>
+                        </span>
+
+                        <div class="input-field col s4">
+                            <select>
+                                <option value="1">Selecionar</option>
+                                <option value="2">Todos </option>
+                                <option value="3"> Pedentes</option>
+                                <option value="4"> Aceitos</option>
+                                <option value="5"> Rejeitados</option>
+
+                            </select>
+                            <label>Listar por:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="card">
+
+                    <div class="row ">
+                        <div class="col s12" style="margin-top: 15px">
+                            <table class="highlight col s12 centered table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <label>
+                                                <input type="checkbox" id="checkall" onclick="checkall(this);" />
+                                                <span></span>
+                                            </label>
+
+                                        </th>
+                                        <th>Risco</th>
+                                        <th>Parte Interessada</th>
+                                        <th>Comunicador</th>
+                                        <th>Meio de Comunicação</th>
+                                        <th>Propósito</th>
+
+                                        <th>Data da Comunicação</th>
+                                        <th>Frequência</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span></span>
+                                                </label>
+                                        </td>
+                                        <td>
+                                            Ausência de infraestrutura e equipamentos necessários para realização do curso.
+                                        </td>
+
+                                        <td>CODEC</td>
+                                        <td> Germana Silva</td>
+                                        <td>Ofício</td>
+                                        <td>Informar</td>
+                                        <td>15/03/2018</td>
+                                        <td>
+                                            Única
+                                        </td>
+                                        <td>
+                                            Pendente
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>-
+                                        </td>
+
+                                        <td>
+                                            Ausência de infraestrutura e equipamentos necessários para realização do curso.
+                                        </td>
+
+                                        <td>Pró-Reitorias</td>
+                                        <td> Gleydson Pinto</td>
+                                        <td>E-mail</td>
+                                        <td>Consultar</td>
+                                        <td>20/03/2018</td>
+                                        <td>
+                                            Exporádica
+                                        </td>
+                                        <td>
+                                            Aceito
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                            <td>-
+                                            </td>
+    
+                                            <td>
+                                                Ausência de infraestrutura e equipamentos necessários para realização do curso.
+                                            </td>
+    
+                                            <td>Pró-Reitorias</td>
+                                            <td> Germana Silva</td>
+                                            <td>E-mail</td>
+                                            <td>Informar</td>
+                                            <td>20/04/2018</td>
+                                            <td>
+                                                Semestralmente
+                                            </td>
+                                            <td>
+                                                Rejeitado
+                                            </td>
+                                        </tr>
+                                   
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                    <div class="section"></div>
+
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="row">
+
+                                <div class="col s12">
+
+                                    <div class="right">
+                                        <a href="#!" class="waves-effect btn btn-large red right-align "> Não Aceitar </a>
+
+                                        <a href="#!" class="waves-effect btn btn-large green right-align "> Aceitar </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+
+
+    <!--SCRIPT DE ANIMAÇÃO-->
+    <script type="text/javascript" src="../../js/materialize.js"></script>
+    <script> M.AutoInit();
+        var elem = document.querySelector('.collapsible.expandable');
+        var instance = M.Collapsible.init(elem, {
+            accordion: false
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems, options);
+        });
+
+    </script>
+
+
+</body>
+
+</html>

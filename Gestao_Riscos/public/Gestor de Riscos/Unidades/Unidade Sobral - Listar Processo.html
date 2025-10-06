@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Riscos</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.css" media="screen,projection"/>
+
+    <link type="text/css" rel="stylesheet" href="../../css/style.css" media="screen,projection">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+
+<body>
+
+<header>
+
+    <!-- Menu Superior -->
+    <div class="navbar-fixed">
+        <nav class="z-depth-0 blue">
+            <div class="nav-wrapper blue">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <ul id="nav-mobile" class="right">
+                    <li>
+                        <a href="#!" data-target="notificacoes" class="dropdown-trigger waves-effect ">
+                            <i class="material-icons right">notifications</i>
+                            <span class="new badge light-blue darken-4">2</span>
+                        </a>
+                    </li>
+
+                    <li><a href="#!"><i class="material-icons">settings</i></a></li>
+
+                    <!-- Abrir Dropdown Usuario -->
+                    <li>
+                        <a class="dropdown-trigger waves-effect" href="#!" data-target="account">
+                            <i class="material-icons left">account_circle</i>
+                            Gestor de Riscos
+                            <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Dropdown Usuario -->
+    <ul id="account" class="dropdown-content dropdown-content-menu">
+        <li><a href="#!"><i class="material-icons left">account_box</i>Meu Perfil</a></li>
+
+        <li class="divider"></li>
+        <li><a href="#!"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+    </ul>
+
+    <!-- Dropdown Notificações -->
+    <div id="notificacoes" class="dropdown-content dropdown-content-menu notifications">
+        <div class="notifications-title">Notificações</div>
+
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title red-text">Aviso</span>
+                <p>Risco <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de tratatamento</p>
+            </div>
+            <div class="card-action ">
+                <a href="Unidade%20Quixada%20-%20Analisar%20Riscos.html" class="blue-text">Visualizar</a>
+                <a href="#!" class="blue-text">Remover</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title red-text">Aviso</span>
+                <p>Risco <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de contigência</p>
+            </div>
+            <div class="card-action">
+                <a href="Unidade%20Quixada%20-%20Analisar%20Riscos.html" class="blue-text">Visualizar</a>
+                <a href="#!" class="blue-text">Remover</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Menu Lateral-->
+    <ul class="sidenav sidenav-fixed sidenav-modificado z-depth-0 grey lighten-4" id="mobile-demo" style="transform: translateX(0px);">
+        <li>
+            <div class="user-view">
+                <a href="../index.html">
+                    <img src="../../img/Brasao%20Horizontal%20UFC%20Policromatico1.png">
+                </a>
+            </div>
+        </li>
+
+        <div class="divider blue"></div>
+
+        <li class="no-padding">
+            <ul class="collapsible expandable">
+
+                <li><div class="divider grey lighten-4"></div></li>
+
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">business</i><h6>Campus Sobral</h6></div>
+                </li>
+
+                <li><div class="divider"></div></li>
+
+                <li class="active">
+                    <div class="collapsible-header">
+                        <i class="material-icons">assignment_late</i>Riscos<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            <ul class="grey lighten-4">
+                                <li><div class="divider" style="margin-top: 0"></div></li>
+                                <li> <a href="Unidade%20Sobral%20-%20Listar%20Riscos.html"><i class="material-icons">list</i>Listar Riscos</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </li>
+
+                <li><div class="divider" style="margin-top: 0"></div></li>
+
+                <li class="active ">
+                    <div class="collapsible-header">
+                        <i class="material-icons">assignment</i>Processos<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            <ul class="grey lighten-4">
+                                <li><div class="divider" style="margin-top: 0"></div></li>
+                                <li class="active blue lighten-4"> <a href="Unidade%20Sobral%20-%20Listar%20Processo.html"><i class="material-icons">list</i>Listar Processos</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </li>
+                <li><div class="divider" style="margin-top: 0"></div></li>
+
+            </ul>
+        </li>
+    </ul>
+    <a class="sidenav-item-bottom" href="../index.html" class="_default_"><i class="material-icons left">keyboard_backspace</i>Pagina inicial</a>
+
+
+
+
+</header>
+
+<!-- Conteudo da pagina-->
+<main class="row">
+    <div class="col s12">
+
+        <!-- Titulo -->
+        <div class="card z-depth-0" >
+            <div class="card-content row no-padding">
+                <span class="col s12">
+                    <h4>Lista de Processos</h4>
+                </span>
+
+
+            </div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="card white">
+                    <ul class=" collapsible col s12 white">
+                        <li class="card-content row">
+                            <h6 class="col s9" style="font-weight: bold">Processo: Capacitação dos Funcionários</h6>
+
+                            <a class="dropdown-trigger col s2 black-text right-align" data-target="dropdown1"><i class="material-icons right">settings_applications</i>Ações</a>
+                            <ul id='dropdown1' class='dropdown-content'>
+                                <li><a href="#!" style="padding-left: 5px"><i style="width: 20px; margin: 0px 10px 0px 0px" class="material-icons">edit</i>Editar</a></li>
+                                <li><a href="#!" style="padding-left: 5px"><i style="width: 20px; margin: 0px 10px 0px 0px" class="material-icons">delete</i>Deletar</a></li>
+                            </ul>
+
+                            <span class="collapsible-header col s1" style="border: none;">Detalhes<i class="material-icons" >arrow_drop_down</i></span>
+
+                            <table class="centered col s12">
+                                <thead>
+                                <tr>
+                                    <th>Gerente do Projeto</th>
+                                    <th>Cargo</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>Nome do Gerente</td>
+                                    <td>Coordenador</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="card-content collapsible-body col s12 grey lighten-5">
+
+
+                                <div class="row">
+                                    <table class="col s12 highlight">
+                                        <thead>
+                                        <tr>
+                                            <th>Descrição do Processo</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                            <td>Identificação das demandas de capacitação; planejamento e realização dos cursos.</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="row">
+                                    <table class="col s12 highlight">
+                                        <thead>
+                                        <tr>
+                                            <th>Alinhamento Estratégicos</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                            <td>Aperfeiçoamento do modelo de gestão de pessoas para o desenvolvimento, capacitação e valorização dos servidores da UFC;
+                                                Estudo e implantação do Modelo de Gestão por Competência.</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="row">
+                                    <table class="col s12 highlight">
+                                        <thead>
+                                        <tr>
+                                            <th>Responsabilidade da Equipe</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                            <td>Planejamento, coordenação de estudos para capacitação e qualificação dos servidores;</br>
+                                                Manutenção, atualização e divulgação da oferta de cursos de capacitação;</br>
+                                                Manutenção e atualização do banco de dados de servidores interessados e dos participantes dos programas de capacitação;</br>
+                                                Manutenção e atualização do cadastro dos instrutores
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row">
+                                    <table class="col s12 highlight">
+                                        <thead>
+                                        <tr>
+                                            <th>Principais Atividades</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                            <td>Elaboração e execução do Plano Anual de Capacitação para servidores Docentes e Técnico-administrativos em Educação;</br>
+                                                Gerenciamento do Banco de Talentos (Banco de Instrutores);</br>
+                                                Promoção do Seminário de Ambientação de servidores recém-ingressos;</br>
+                                                Acompanhamento das ações de qualificação (graduação e pós-graduação) ofertadas em parceria com a PROGEPE.
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row">
+                                    <table class="col s12 highlight">
+                                        <thead>
+                                        <tr>
+                                            <th>Gerente</th>
+                                            <th>Gerente Substituto</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Gleydson Pinto</td>
+                                            <td>Germana Silva</td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+
+
+                                <div class="row">
+                                    <table class="col s12 highlight">
+                                        <thead>
+                                        <tr>
+                                            <th>Atividade que Compõem o Processo</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                            <td>1. Recebimento de Demandas para os cursos de Capacitação;</br>
+                                                2. Organização dos cursos de Capacitação oriundos de Levantamento de Necessidades de Treinamento provenientes da Avaliação de desempenho e Livre Demanda;</br>
+                                                3. Cadastro e seleção dos Instrutores;</br>
+                                                4. Inscrição para os cursos de Capacitação;</br>
+                                                5. Efetivação dos cursos de capacitação;</br>
+                                                6. Finalização dos cursos de capacitação;</br>
+                                                7. Pagamento de Instrutores.</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="row">
+                                    <table class="col s12 highlight">
+                                        <thead>
+                                        <tr>
+                                            <th>Agentes do Processo:</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                            <td>FORNECEDORES: Chefias e Servidores que solicitam as capacitações</br>
+                                                ENTRADAS: Solicitação de participação nos cursos por meio de Formulário LNT (Levantamento das Necessidades de Treinamento); pelos indicadores nos resultados das Avaliações de Desempenho do servidor; ou por Livre Demanda.</br>
+                                                CLIENTES: Servidores públicos federais, docentes e técnico-administrativos, pertencentes ao quadro da Universidade e em exercício na Instituição; de outros órgãos em exercício na Instituição; Profissionais que estão em regime de contratação temporária.</br>
+                                                SAÍDAS: Servidores capacitados.</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div class="row">
+                                    <table class="col s12 highlight">
+                                        <thead>
+                                        <tr>
+                                            <th>Indicadores do Processo</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                            <td>NOME DO INDICADOR: Número de servidores capacitados; Número de cursos e eventos realizados. Índice de satisfação dos servidores capacitados</br>
+                                                COMO SERÁ MEDIDO? Pela análise dos relatórios e questionários</br>
+                                                QUEM VAI MEDIR? Gestor</br>
+                                                QUANDO VAI MEDIR? Ao final de cada curso</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+
+
+
+<!--SCRIPT DE ANIMAÇÃO-->
+<script type="text/javascript" src="../../js/materialize.js"></script>
+<script>
+    M.AutoInit();
+</script>
+<script type="text/javascript" src="../../js/menu.js"></script>
+
+
+</body>
+
+</html>

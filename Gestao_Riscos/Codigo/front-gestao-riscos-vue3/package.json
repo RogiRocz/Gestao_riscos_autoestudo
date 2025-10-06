@@ -1,0 +1,41 @@
+{
+  "name": "front-gestao-riscos-vue3",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^5.0.13",
+    "axios": "^1.6.8",
+    "pinia": "^3.0.3",
+    "pinia-plugin-persistedstate": "^4.5.0",
+    "roboto-fontface": "*",
+    "vitest": "^3.2.4",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "vuetify": "^3.6.0",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "@mdi/font": "^7.4.47",
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@types/node": "^20.19.19",
+    "@types/webfontloader": "^1.6.38",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/tsconfig": "^0.5.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.26.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.75.0",
+    "typescript": "~5.4.5",
+    "vite": "^6.3.6",
+    "vite-plugin-vuetify": "^2.0.3",
+    "vue-tsc": "^2.0.13"
+  }
+}

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Riscos</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.css" media="screen,projection"/>
+
+    <link type="text/css" rel="stylesheet" href="../../css/style.css" media="screen,projection">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <!-- Menu Superior -->
+    <div class="navbar-fixed">
+        <nav class="z-depth-0 blue">
+            <div class="nav-wrapper blue">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <ul id="nav-mobile" class="right">
+                    <li>
+                        <a href="#!" data-target="notificacoes" class="dropdown-trigger waves-effect ">
+                            <i class="material-icons right">notifications</i>
+                            <span class="new badge light-blue darken-4">2</span>
+                        </a>
+                    </li>
+
+                    <li><a href="#!"><i class="material-icons">settings</i></a></li>
+
+                    <!-- Abrir Dropdown Usuario -->
+                    <li>
+                        <a class="dropdown-trigger waves-effect" href="#!" data-target="account">
+                            <i class="material-icons left">account_circle</i>
+                            Gestor de Riscos
+                            <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Dropdown Usuario -->
+    <ul id="account" class="dropdown-content dropdown-content-menu">
+        <li><a href="#!"><i class="material-icons left">account_box</i>Meu Perfil</a></li>
+
+        <li class="divider"></li>
+        <li><a href="#!"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+    </ul>
+
+    <!-- Dropdown Notificações -->
+    <div id="notificacoes" class="dropdown-content dropdown-content-menu notifications">
+        <div class="notifications-title">Notificações</div>
+
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title red-text">Aviso</span>
+                <p>Risco <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de tratatamento</p>
+            </div>
+            <div class="card-action ">
+                <a href="Unidade%20Quixada%20-%20Analisar%20Riscos.html" class="blue-text">Visualizar</a>
+                <a href="#!" class="blue-text">Remover</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title red-text">Aviso</span>
+                <p>Risco <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de contigência</p>
+            </div>
+            <div class="card-action">
+                <a href="Unidade%20Quixada%20-%20Analisar%20Riscos.html" class="blue-text">Visualizar</a>
+                <a href="#!" class="blue-text">Remover</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Menu Lateral-->
+    <ul class="sidenav sidenav-fixed sidenav-modificado z-depth-0 grey lighten-4" id="mobile-demo" style="transform: translateX(0px);">
+        <li>
+            <div class="user-view">
+                <a href="../index.html">
+                    <img src="../../img/Brasao%20Horizontal%20UFC%20Policromatico1.png">
+                </a>
+            </div>
+        </li>
+
+        <div class="divider blue"></div>
+
+        <li class="no-padding">
+            <ul class="collapsible expandable">
+
+                <li><div class="divider grey lighten-4"></div></li>
+
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">business</i><h6>Campus Quixadá</h6></div>
+                </li>
+
+                <li><div class="divider"></div></li>
+
+                <li>
+                    <div class="collapsible-header">
+                        <i class="material-icons">assignment_late</i>Riscos<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            <ul class="grey lighten-4">
+                                <li><div class="divider" style="margin-top: 0"></div></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Listar%20Riscos.html"><i class="material-icons">list</i>Listar Riscos</a></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Novo%20Risco.html"><i class="material-icons">playlist_add</i>Novo Risco</a></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Analisar%20Riscos.html"><i class="material-icons">playlist_add_check</i>Analisar Riscos</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </li>
+
+                <li><div class="divider" style="margin-top: 0"></div></li>
+
+                <li class="active" id="">
+                    <div class="collapsible-header">
+                        <i class="material-icons">assignment</i>Processos<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            <ul class="grey lighten-4">
+                                <li><div class="divider" style="margin-top: 0"></div></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Listar%20Processo.html"><i class="material-icons">list</i>Listar Processos</a></li>
+                                <li class="active blue lighten-4"> <a href="Unidade Quixada - Novo Processo.html"><i class="material-icons">playlist_add</i>Novo Processo</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </li>
+                <li><div class="divider" style="margin-top: 0"></div></li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="material-icons">assignment</i>Comunicação<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            <ul class="grey lighten-4">
+                                <li><div class="divider" style="margin-top: 0"></div></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Listar%20Comunicacao.html"><i class="material-icons">list</i>Listar Comunicações</a></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Nova%20Comunicacao.html"><i class="material-icons">playlist_add</i>Nova Comunicação</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </li>
+                <li><div class="divider" style="margin-top: 0"></div></li>
+
+            </ul>
+        </li>
+    </ul>
+    <a class="sidenav-item-bottom" href="../index.html" class="_default_"><i class="material-icons left">keyboard_backspace</i>Pagina inicial</a>
+
+
+
+
+</header>
+
+<!-- Conteudo da pagina-->
+<main class="row">
+    <div class="col s12">
+
+        <!-- Titulo -->
+        <div class="card z-depth-0" >
+            <div class="card-content row no-padding">
+                <span class="col s12">
+                    <h4>Novo Processo</h4>
+                </span>
+
+            </div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="card">
+            <form class="section white">
+
+                <div class="row">
+                    <legend class="col s10 offset-s1"><h5>Dados do Processo</h5></legend>
+                </div>
+                <div class="row">
+                    <div class="col s10 offset-s1">
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Informações Gerais</h6></legend>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Nome do processo" id="nome" type="text" class="validate">
+                                <label for="nome">Nome </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="descricaoProcesso" placeholder="Descrição do Processo" class="materialize-textarea"></textarea>
+                                <label for="descricaoProcesso">Descrição do Processo</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="alinhamento" placeholder="Alinhamento Estratégico" class="materialize-textarea"></textarea>
+                                <label for="alinhamento">Alinhamento Estratégico</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <label for="atividades" class="col s12">Atividades que compõem o processo</label>
+                            <div class="col s12 chips">
+                                <input id="atividades" placeholder="adicionar" class="custom-class">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>Diagrama</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Click aqui para inserir o diagrama">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Agentes do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Fornecedores" id="forncedoresProcesso" type="text">
+                                <label for="forncedoresProcesso">Forncedores do Processo </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Entradas" id="entradasProcesso" type="text">
+                                <label for="entradasProcesso">Entradas </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Clientes" id="clientesProcesso" type="text">
+                                <label for="clientesProcesso">Clientes </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Saídas" id="saidassProcesso" type="text">
+                                <label for="saidassProcesso">Saídas </label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Indicadores do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Nome do Indicador" id="indicadoresProcesso" type="text">
+                                <label for="indicadoresProcesso">Indicadores do Processo </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Forma de Medição" id="medicaoProcesso" type="text">
+                                <label for="medicaoProcesso">Forma de Medição </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Responsável pela Medição" id="responsavelMedicaoProcesso" type="text">
+                                <label for="responsavelMedicaoProcesso">Responsável pela medição </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Perido para Realizar a Medição" id="dataMedicaoProcesso" type="text">
+                                <label for="dataMedicaoProcesso">Perido para Realizar a Medição</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <legend class="col s10 offset-s1"><h5>Dados dos Responsáveis</h5></legend>
+                </div>
+                <div class="row">
+                    <div class="col s10 offset-s1">
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Gerente do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Nome do Gerente" id="nomeGerente" type="text" class="validate">
+                                <label for="nomeGerente">Nome do Gerente </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <select>
+                                    <option value="" disabled selected>Selecione o cargo</option>
+                                    <option value="1">Coordenador</option>
+                                    <option value="2">Gestor</option>
+                                    <option value="3">Secretario</option>
+                                </select>
+                                <label>Cargo</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input id="email" type="email" class="validate" placeholder="email@email.com">
+                                <label for="email">Email</label>
+                                <span class="helper-text" data-error="Email invalido" data-success="Email Valido"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Dados da Equipe</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="responsabilidadeEquipe" placeholder="Responsabilidade da Equipe" class="materialize-textarea"></textarea>
+                                <label for="responsabilidadeEquipe">Responsabilidade da Equipe</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="principaisAtividades" placeholder="Principais Atividades" class="materialize-textarea"></textarea>
+                                <label for="principaisAtividades">Principais Atividades</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="input-field col s6">
+
+                                <input type="text" id="gerenteEquipe" class="autocomplete">
+                                <label for="gerenteEquipe">Gerente</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input type="text" id="gerenteSubstitutoEquipe" class="autocomplete">
+                                <label for="gerenteSubstitutoEquipe">Gerente Substituto</label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <label for="integrantesEquipe" class="col s12">Integrantes</label>
+                            <div class="col s12 chips chips-autocomplete" id="integrantesEquipe">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <legend class="col s10 offset-s1"><h5>Cronograma do Mapeamento</h5></legend>
+                </div>
+
+                <div class="row">
+                    <div class="col s10 offset-s1">
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Mapeamento do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataMapeamentoInicio" type="text" class="datepicker">
+                                <label for="dataMapeamentoInicio"> Início </label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataMapeamentoFim" type="text" class="datepicker">
+                                <label for="dataMapeamentoFim"> Término </label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Reuniões de Mapeamento</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataReunioesInicio" type="text" class="datepicker">
+                                <label for="dataReunioesInicio"> Início </label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataReunioesFim" type="text" class="datepicker">
+                                <label for="dataReunioesFim"> Término  </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Validação do Fluxo do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataValidacaoInicio" type="text" class="datepicker">
+                                <label for="dataValidacaoInicio"> Início </label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataValidacaoFim" type="text" class="datepicker">
+                                <label for="dataValidacaoFim"> Término  </label>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <div class="row">
+                            <div class="col s12">
+                                <a href="#!" class="waves-effect btn btn-large green right"><i class="material-icons right">send</i> CADASTRAR </a>
+                                <a href="Unidade%20Quixada%20-%20Listar%20Processo.html" class="waves-effect btn btn-large red left"><i class="material-icons left">cancel</i>CANCELAR</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</main>
+
+
+
+<!--SCRIPT DE ANIMAÇÃO-->
+<script type="text/javascript" src="../../js/materialize.js"></script>
+<script>
+    M.AutoInit();
+</script>
+<script type="text/javascript" src="../../js/menu.js"></script>
+
+
+</body>
+
+</html>

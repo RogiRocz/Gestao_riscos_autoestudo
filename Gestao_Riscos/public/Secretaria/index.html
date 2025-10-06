@@ -1,0 +1,330 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Secretaria da Governaça</title>
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="../css/materialize.css" media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link type="text/css" rel="stylesheet" href="../css/style.css" media="screen,projection">
+
+    </head>
+
+    <body>
+
+
+    <header>
+
+        <div class="navbar-fixed">
+            <nav class="z-depth-0 blue">
+                <div class="nav-wrapper blue">
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+
+                    <ul id="nav-mobile" class="right">
+                        <li>
+                            <a href="#!" data-target="notificacoes" class="dropdown-trigger waves-effect ">
+                                <i class="material-icons right">notifications</i>
+                                <span class="new badge light-blue darken-4">2</span>
+                            </a>
+                        </li>
+
+                        <li><a href="#!"><i class="material-icons">settings</i></a></li>
+
+                        <!-- Abrir Dropdown Usuario -->
+                        <li>
+                            <a class="dropdown-trigger waves-effect" href="#!" data-target="account">
+                                <i class="material-icons left">account_circle</i>
+                                Secretária da Governaça
+                                <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Dropdown Usuario -->
+        <ul id="account" class="dropdown-content dropdown-content-menu">
+            <li><a href="#!"><i class="material-icons left">account_box</i>Meu Perfil</a></li>
+
+            <li class="divider"></li>
+            <li><a href="#!"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+        </ul>
+
+        <!-- Dropdown Notificações -->
+        <div id="notificacoes" class="dropdown-content dropdown-content-menu notifications">
+            <div class="notifications-title">Notificações</div>
+
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title red-text">Aviso</span>
+                    <p>Risco <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de tratatamento</p>
+                </div>
+                <div class="card-action ">
+                    <a href="#!" class="blue-text">Visualizar</a>
+                    <a href="#!" class="blue-text">Remover</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title red-text">Aviso</span>
+                    <p>Risco <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de contigência</p>
+                </div>
+                <div class="card-action">
+                    <a href="#!" class="blue-text">Visualizar</a>
+                    <a href="#!" class="blue-text">Remover</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Menu Lateral-->
+        <ul class="sidenav sidenav-fixed z-depth-0 grey lighten-4" id="mobile-demo">
+            <li>
+                <div class="user-view">
+                    <a href="#user">
+                        <img src="../img/Brasao%20Horizontal%20UFC%20Policromatico1.png">
+                    </a>
+                </div>
+            </li>
+
+            <div class="divider blue"></div>
+
+            <li class="no-padding">
+                <ul class="collapsible expandable">
+
+                    <li class="active blue lighten-3">
+                        <div class="collapsible-header"><i class="material-icons">web</i>Dashboard</div>
+                    </li>
+
+                    <div class="divider" style="margin-top: 0;"></div>
+                    <li class="active grey lighten-4">
+                        <div class="collapsible-header">
+                            <i class="material-icons">business</i>Unidades<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="collapsible-body">
+                            <ul class="grey lighten-4">
+                                <li><a href="../Secretaria/Unidades/unidadesX.html" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Campus Quixadá</a></li>
+                                <li><a href="#!" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Campus Sobral</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <div class="divider" style="margin-top: 0;"></div>
+                    <li class="active grey lighten-4">
+                        <div class="collapsible-header">
+                            <i class="material-icons">description</i>Documentos<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="collapsible-body">
+                            <ul class="grey lighten-4">
+                                <li><a href="../Secretaria/Documentos/politicasRisco.html" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Políticas de Riscos</a></li>
+                                <li><a href="../Secretaria/Documentos/planoComunicao.html" class="waves-effect"><i class="material-icons">subdirectory_arrow_right</i>Plano de Comunicação</a></li>
+                                <li >
+                                    <a href="Documentos/matrizResponsabilidade.html" class="waves-effect  ">
+                                        <i class="material-icons">subdirectory_arrow_right</i>Matriz de Responsabilidade</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </li>
+        </ul>
+
+    </header>
+
+    <!-- Conteudo da pagina-->
+    <!-- CONTEUDO DA PAGINA -->
+    <main class="grey lighten-4">
+
+            <div class="col s12">
+
+                    <!-- Titulo -->
+                    <div class="card z-depth-0" >
+                        <div class="card-content row no-padding">
+                            <span class="col s10 center">
+                                <h4>DASHBOARD</h4>
+                            </span>
+                            <div class="col s2">
+                                <label>Unidades</label>
+                                <select class="">
+                                    <option value="" selected>Exibir todas</option>
+                                    <option value="1">Campus Quixadá</option>
+                                    <option value="2">Campus Sobral</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+            
+                    <!-- Mapa de Riscos -->
+                    <div class="card">
+                        <div class="card-content row">
+                            <span class="col s8 offset-s1 " style="font-size:large;font-weight: bold">Mapa de riscos</span>
+                            <div class="col s2">
+                                <label>Tipos de Risco</label>
+                                <select class="">
+                                    <option value="">Todos</option>
+                                    <option value="1">Ameaças</option>
+                                    <option value="2">Oportunidades</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+            
+                            <!-- Mapa de riscos-->
+                            <div class="col s6 offset-s1 row">
+                                <div class="col s1 center btn-flat" style="transform: rotate(-90deg);font-size: small; margin-top: 130px"> Probabilidade </div>
+                                <table class="col s2 centered responsive-table mapaRiscos">
+                                    <tbody class="mapa-text">
+                                    <tr>
+                                        <td class="white" >Quase certo</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white">Muito provavel</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white">Possível</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white">Pouco provavel</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white">Improvável</td>
+                                    </tr>
+            
+                                </table>
+                                <table class="col s8 centered responsive-table mapaRiscos">
+                                    <tbody>
+                                    <tr>
+                                        <!--<td class="white" style="text-align: right; font-size: small;">Quase certo</td>-->
+                                        <td class="green darken-2 white-text"> 5</td>
+                                        <td class="amber white-text">10</td>
+                                        <td class="red white-text">15</td>
+                                        <td class="red white-text">20</td>
+                                        <td class="red white-text">25</td>
+                                    </tr>
+                                    <tr>
+                                        <!--<td class="white" style="text-align: right;font-size: small; ">Muito provavel</td>-->
+                                        <td class="green white-text" >4</td>
+                                        <td class="green darken-2 white-text" >8</td>
+                                        <td class="amber white-text" >12</td>
+                                        <td class="red white-text" >16</td>
+                                        <td class="red white-text" >20</td>
+                                    </tr>
+                                    <tr>
+                                        <!--<td class="white" style="text-align: right;font-size: small; ">Possível</td>-->
+                                        <td class="green white-text" >3</td>
+                                        <td class="green darken-2 white-text" >6</td>
+                                        <td class="amber white-text" >9</td>
+                                        <td class="amber white-text" >12</td>
+                                        <td class="red white-text" >15</td>
+                                    </tr>
+                                    <tr>
+                                        <!--<td class="white" style="text-align: right;font-size: small; ">Pouco provavel</td>-->
+                                        <td class="green white-text" >2</td>
+                                        <td class="green white-text" >4</td>
+                                        <td class="green darken-2 white-text" >6</td>
+                                        <td class="green darken-2 white-text" >8</td>
+                                        <td class="red white-text" >10</td>
+                                    </tr>
+                                    <tr>
+                                        <!--<td class="white" style="text-align: right;font-size: small; ">Improvável</td>-->
+                                        <td class="green white-text" >1</td>
+                                        <td class="green white-text" >2</td>
+                                        <td class="green white-text" >3</td>
+                                        <td class="green white-text" >4</td>
+                                        <td class="red white-text" >5</td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody>
+                                    <tr>
+                                        <td class="white">Muito baixo</td>
+                                        <td class="white">Baixo</td>
+                                        <td class="white">Moderado</td>
+                                        <td class="white">Alto</td>
+                                        <td class="white">Muito Alto</td>
+                                    </tr>
+            
+                                    </tbody>
+                                </table>
+                                <div class="col s11 offset-s1 center btn-flat" style="font-size: small;"> Impacto </div>
+                            </div>
+            
+                            <div class="col s4" id="nivelDeRisco" style="height: 350px;" ></div>
+                        </div>
+                    </div>
+            
+                    <!-- Outros Graficos-->
+                   <div class="card">
+                        <ul class="card-content collapsible z-depth-0">
+                            <li>
+                                <div class="collapsible-header">
+                                    <span class="left"><i class="material-icons">pie_chart</i>Outros Graficos</span>
+                                    <span style="position: absolute; right: 2%"><i class="material-icons arrow-rotate">arrow_downward</i></span></div>
+                                <div class="collapsible-body row">
+                                    <div id="categorias" class="col s6" style="height: 400px" ></div>
+                                    <div id="categorias2" class="col s6" style="height: 400px" ></div>
+            
+                                </div>
+                            </li>
+            
+                        </ul>
+                    </div>
+            
+                    <!-- Incidência -->
+                    <div class="card">
+                        <div class="card-content row">
+                            <span class="col s8 offset-s1 " style="font-size:large;font-weight: bold">Incidência</span>
+                            <div class="col s2">
+                                <label>Ano</label>
+                                <select class="">
+                                    <option value="1">2017</option>
+                                    <option value="2">2018</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+            
+                            <div class="col s10 offset-s1" id="incidencia" style="height: 400px;" ></div>
+            
+            
+                            <!--<span class="col s12 center"><img class="responsive-img "style ="width: 1200px;height: 300px;margin-top: 20px" src="../img/calendarioRisco.png"></span>-->
+                        </div>
+                    </div>
+            
+                </div>
+    </main>
+
+
+
+    <!--SCRIPT DE ANIMAÇÃO-->
+    <script type="text/javascript" src="../js/materialize.js"></script>
+    <script> M.AutoInit(); 
+    var elem = document.querySelector('.collapsible.expandable');
+    var instance = M.Collapsible.init(elem, {
+    accordion: false
+    });
+        </script>
+
+<script type="text/javascript" src="../js/amcharts/amcharts.js"></script>
+<script type="text/javascript" src="../js/amcharts/pie.js"></script>
+<script type="text/javascript" src="../js/amcharts/serial.js"></script>
+<script type="text/javascript" src="../js/graficos dashboard.js"></script>
+<script type="text/javascript" src="../js/menu.js"></script>
+
+    </body>
+
+
+    </html>

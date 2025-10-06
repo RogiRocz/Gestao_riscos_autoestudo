@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Riscos UFC</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.css" media="screen,projection"/>
+
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
+        header, main, footer {
+            padding-left: 300px;
+        }
+
+        @media only screen and (max-width : 992px) {
+            header, main, footer {
+                padding-left: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!--MENU LATERAL -->
+<ul class="sidenav sidenav-fixed" id="mobile-demo" >
+    <li>
+        <div class="user-view">
+
+            <div class="background blue">
+            </div>
+            <a href="#!" class="brand-logo"> <img src="../img/Brasao%20Horizontal%20UFC%20Policromatico1.png" height="60" width="200"/> </a>
+
+        </div>
+    </li>
+
+    <ul class="collapsible">
+        <li class="active blue lighten-3">
+            <div class="collapsible-header"><i class="material-icons">insert_chart</i>DASHBOARD</div>
+        </li>
+
+
+        <li>
+            <div class="collapsible-header"><i class="material-icons">business</i>UNIDADES</div>
+            <div class="collapsible-body">
+                <span>
+                       <ul>
+                            <li> <a href="Unidades/unidadeX%20-%20listarRiscos.html">Campus Quixadá</a></li>
+                            <li> <a href="Unidades/unidadeY%20-%20listarRiscos.html">Campus Sobral</a></li>
+                       </ul>
+                </span>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">description</i>DOCUMENTOS</div>
+            <div class="collapsible-body"><span> A DEFINIR </span></div>
+        </li>
+    </ul>
+
+
+</ul>
+
+
+<!-- BARRA DE NAVEGAÇÂO SUPERIOR -->
+<header>
+    <nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <div class="nav-wrapper blue">
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                <li><a href="#!"><i class="material-icons ">notifications</i></a></li>
+                <li><a href="#!"><i class="material-icons ">settings</i></a></li>
+
+                <li><a class="dropdown-trigger" href="#!" data-target="usuario"><i class="material-icons right">account_circle</i>Gestor de Risco</a></a></li>
+                <ul id="usuario" class="dropdown-content">
+                    <li><a href="#!">Meus Dados</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Sair</a></li>
+                </ul>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- CONTEUDO DA PAGINA -->
+<main class="grey lighten-4">
+
+    <div class="card ">
+        <div class="card-content row">
+            <span class="col s10 flow-text center">DASHBOARD</span>
+            <div class="col s2">
+                <label>Unidades</label>
+                <select class="">
+                    <option value="" selected>Exibir todas</option>
+                    <option value="1">Campus Quixadá</option>
+                    <option value="2">Campus Sobral</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-content row">
+            <span class="col s8 offset-s1 " style="font-size:large;font-weight: bold">Mapa de riscos</span>
+            <div class="col s2">
+                <label>Tipos de Risco</label>
+                <select class="">
+                    <option value="">Todos</option>
+                    <option value="1">Ameaças</option>
+                    <option value="2">Oportunidades</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--<span class="col s6 offset-s1 "><img class="responsive-img" src="../img/mapaderiscos02.png" style="height: 400px;"></span>-->
+
+            <div class="col s6 offset-s1 row">
+
+
+                <div class="col s1 center btn-flat" style="transform: rotate(-90deg);font-size: small; margin-top: 180px"> Probabilidade </div>
+                <table class="col s10 centered responsive-table">
+
+                    <tbody>
+                    <tr style="border:none;">
+                        <td class="white" style="text-align: right; font-size: small;">Quase certo</td>
+                        <td class="green darken-2 white-text" style="border: 1px solid white;"> 5</td>
+                        <td class="amber white-text" style="border: 1px solid white;">10</td>
+                        <td class="red white-text" style="border: 1px solid white;">15</td>
+                        <td class="red white-text" style="border: 1px solid white;">20</td>
+                        <td class="red white-text" style="border: 1px solid white;">25</td>
+                    </tr>
+                    <tr style="border:none;">
+                        <td class="white" style="text-align: right;font-size: small; ">Muito provavel</td>
+                        <td class="green white-text" style="border: 1px solid white;">4</td>
+                        <td class="green darken-2 white-text" style="border: 1px solid white;">8</td>
+                        <td class="amber white-text" style="border: 1px solid white;">12</td>
+                        <td class="red white-text" style="border: 1px solid white;">16</td>
+                        <td class="red white-text" style="border: 1px solid white;">20</td>
+                    </tr>
+                    <tr style="border:none;">
+                        <td class="white" style="text-align: right;font-size: small; ">Possível</td>
+                        <td class="green white-text" style="border: 1px solid white;">3</td>
+                        <td class="green darken-2 white-text" style="border: 1px solid white;">6</td>
+                        <td class="amber white-text" style="border: 1px solid white;">9</td>
+                        <td class="amber white-text" style="border: 1px solid white;">12</td>
+                        <td class="red white-text" style="border: 1px solid white;">15</td>
+                    </tr>
+                    <tr style="border:none;">
+                        <td class="white" style="text-align: right;font-size: small; ">Pouco provavel</td>
+                        <td class="green white-text" style="border: 1px solid white;">2</td>
+                        <td class="green white-text" style="border: 1px solid white;">4</td>
+                        <td class="green darken-2 white-text" style="border: 1px solid white;">6</td>
+                        <td class="green darken-2 white-text" style="border: 1px solid white;">8</td>
+                        <td class="red white-text" style="border: 1px solid white;">10</td>
+                    </tr>
+                    <tr style="border:none;">
+                        <td class="white" style="text-align: right;font-size: small; ">Improvável</td>
+                        <td class="green white-text" style="border: 1px solid white;">1</td>
+                        <td class="green white-text" style="border: 1px solid white;">2</td>
+                        <td class="green white-text" style="border: 1px solid white;">3</td>
+                        <td class="green white-text" style="border: 1px solid white;">4</td>
+                        <td class="red white-text" style="border: 1px solid white;">5</td>
+                    </tr>
+                    <tr style="border:none;">
+                        <td></td>
+                        <td class="white" style="font-size: small; width: 100px">Muito baixo</td>
+                        <td class="white" style="font-size: small; width: 100px">Baixo</td>
+                        <td class="white" style="font-size: small; width: 100px">Moderado</td>
+                        <td class="white" style="font-size: small; width: 100px">Alto</td>
+                        <td class="white" style="font-size: small; width: 100px">Muito Alto</td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+                <div class="col s11 offset-s1 center  btn-flat" style="font-size: small;"> Impacto </div>
+
+
+
+            </div>
+
+            <div class="col s4" id="nivelDeRisco" style="height: 400px;" ></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-content row">
+            <span class="col s10 offset-s1 " style="font-size:large;font-weight: bold">Outros Graficos</span>
+        </div>
+
+        <div class="row">
+            <div class="col s10 offset-s1 row">
+
+                <ul class="col s6 collapsible expandable white">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">pie_chart</i>Categoria</div>
+                        <div class="collapsible-body">
+                            <div id="categorias" style="height: 400px" ></div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="col s6 collapsible expandable white">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">pie_chart</i>Nivel De Risco</div>
+                        <div class="collapsible-body">
+                            <div id="categorias2" style="height: 400px" ></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="card">
+        <div class="card-content row">
+            <span class="col s8 offset-s1 " style="font-size:large;font-weight: bold">Incidência</span>
+            <div class="col s2">
+                <label>Ano</label>
+                <select class="">
+                    <option value="1">2017</option>
+                    <option value="2">2018</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col s10 offset-s1" id="incidencia" style="height: 400px;" ></div>
+
+
+            <!--<span class="col s12 center"><img class="responsive-img "style ="width: 1200px;height: 300px;margin-top: 20px" src="../img/calendarioRisco.png"></span>-->
+        </div>
+    </div>
+
+</main>
+
+
+<!--RODAPÉ DA PAGINA-->
+<footer></footer>
+
+
+<!--SCRIPT DE ANIMAÇÃO-->
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script> M.AutoInit(); </script>
+
+<script type="text/javascript" src="../js/amcharts/amcharts.js"></script>
+<script type="text/javascript" src="../js/amcharts/pie.js"></script>
+<script type="text/javascript" src="../js/amcharts/serial.js"></script>
+
+<script type="text/javascript">
+    AmCharts.makeChart("categorias",
+        {
+            "type": "pie",
+            "angle": 12,
+            "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+            "depth3D": 15,
+            "colors": [
+                "#ff9800",
+                "#2196f3",
+                "#4caf50",
+                "#FCD202",
+                "#F8FF01",
+                "#B0DE09",
+                "#04D215",
+                "#0D8ECF",
+                "#0D52D1",
+                "#2A0CD0",
+                "#8A0CCF",
+                "#CD0D74",
+                "#754DEB",
+                "#DDDDDD",
+                "#999999",
+                "#333333",
+                "#000000",
+                "#57032A",
+                "#CA9726",
+                "#990000",
+                "#4B0C25"
+            ],
+            "maxLabelWidth": 200,
+            "pullOutDuration": 0,
+            "startDuration": 0,
+            "startEffect": "easeOutSine",
+            "titleField": "category",
+            "valueField": "column-1",
+            "classNamePrefix": "categoria",
+            "decimalSeparator": ",",
+            "export": {
+                "enabled": true
+            },
+            "allLabels": [],
+            "balloon": {},
+            "legend": {
+                "enabled": true,
+                "align": "center",
+                "markerType": "circle"
+            },
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "Sem Categoria",
+                    "column-1": "1"
+                },
+                {
+                    "category": "Infraestrutura",
+                    "column-1": "3"
+                },
+                {
+                    "category": "Ensino",
+                    "column-1": "2"
+                }
+            ]
+        },
+    );
+
+    AmCharts.makeChart("categorias2",
+        {
+            "type": "pie",
+            "angle": 12,
+            "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+            "depth3D": 15,
+            "titleField": "Nivel de risco",
+            "valueField": "Valor",
+            "pullOutDuration": 0,
+            "startDuration": 0,
+            "allLabels": [],
+            "balloon": {},
+            "legend": {
+                "enabled": true,
+                "align": "center",
+                "markerType": "circle"
+            },
+            "titles": [],
+            "dataProvider": [
+                {
+                    "Nivel de risco": "Muito Alto",
+                    "Valor": "1"
+                },
+                {
+                    "Nivel de risco": "Alto",
+                    "Valor": "1"
+                },
+                {
+                    "Nivel de risco": "Medio",
+                    "Valor": "1"
+                },
+                {
+                    "Nivel de risco": "Baixo",
+                    "Valor": "1"
+                },
+                {
+                    "Nivel de risco": "Insignificante",
+                    "Valor": "1"
+                }
+            ]
+        }
+    );
+
+    AmCharts.makeChart("nivelDeRisco",
+        {
+            "type": "serial",
+            "categoryField": "category",
+            "angle": 30,
+            "depth3D": 30,
+            "colors": [
+                "#4caf50",
+                "#388e3c",
+                "#ffc107",
+                "#f44336",
+                "#2A0CD0",
+                "#CD0D74",
+                "#CC0000",
+                "#00CC00",
+                "#0000CC",
+                "#DDDDDD",
+                "#999999",
+                "#333333",
+                "#990000"
+            ],
+            "startDuration": 1,
+            "categoryAxis": {
+                "gridPosition": "start"
+            },
+            "trendLines": [],
+            "graphs": [
+                {
+                    "balloonText": "[[title]]: [[value]]",
+                    "fillAlphas": 1,
+                    "id": "AmGraph-1",
+                    "title": "Riscos Aceitaveis",
+                    "type": "column",
+                    "valueField": "column-1"
+                },
+                {
+                    "balloonText": "[[title]]: [[value]]",
+                    "fillAlphas": 1,
+                    "id": "AmGraph-2",
+                    "title": "Riscos Aceitaveis com Restriçoes",
+                    "type": "column",
+                    "valueField": "column-2"
+                },
+                {
+                    "balloonText": "[[title]]: [[value]]",
+                    "fillAlphas": 1,
+                    "id": "AmGraph-3",
+                    "title": "Riscos Críticos",
+                    "type": "column",
+                    "valueField": "column-3"
+                },
+                {
+                    "balloonText": "[[title]]: [[value]]",
+                    "fillAlphas": 1,
+                    "id": "AmGraph-4",
+                    "title": "Riscos Inaceitaveis",
+                    "type": "column",
+                    "valueField": "column-4"
+                }
+            ],
+            "guides": [],
+            "valueAxes": [
+                {
+                    "id": "ValueAxis-1",
+                    "title": "Quantidade"
+                }
+            ],
+            "allLabels": [],
+            "balloon": {},
+            "legend": {
+                "enabled": true,
+                "useGraphSettings": true
+            },
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "Nivel de risco",
+                    "column-1": "23",
+                    "column-2": "33",
+                    "column-3": "43",
+                    "column-4": "126"
+                }
+            ]
+        }
+    );
+
+    AmCharts.makeChart("incidencia",
+        {
+            "type": "serial",
+            "categoryField": "date",
+            "dataDateFormat": "YYYY-MM",
+            "colors": [
+                "#f44336",
+                "#4caf50",
+                "#B0DE09",
+                "#0D8ECF",
+                "#2A0CD0",
+                "#CD0D74",
+                "#CC0000",
+                "#00CC00",
+                "#0000CC",
+                "#DDDDDD",
+                "#999999",
+                "#333333",
+                "#990000"
+            ],
+            "theme": "default",
+            "categoryAxis": {
+                "minPeriod": "MM",
+                "parseDates": true
+            },
+            "chartCursor": {
+                "enabled": true,
+                "categoryBalloonDateFormat": "MMM YYYY",
+                "cursorColor": "#2196F3"
+            },
+            "chartScrollbar": {
+                "enabled": true
+            },
+            "trendLines": [],
+            "graphs": [
+                {
+                    "balloonText": "[[value]] incidências em ameaças",
+                    "bullet": "round",
+                    "id": "AmGraph-1",
+                    "title": "Ameaças",
+                    "valueField": "column-1"
+                },
+                {
+                    "balloonText": "[[value]] incidências em oportunidades",
+                    "bullet": "square",
+                    "id": "AmGraph-2",
+                    "title": "Oportunidades",
+                    "valueField": "column-2"
+                }
+            ],
+            "guides": [],
+            "valueAxes": [
+                {
+                    "id": "ValueAxis-1",
+                    "title": ""
+                }
+            ],
+            "allLabels": [],
+            "balloon": {},
+            "legend": {
+                "enabled": true,
+                "useGraphSettings": true
+            },
+            "titles": [
+                {
+                    "id": "Title-1",
+                    "size": 15,
+                    "text": ""
+                }
+            ],
+            "dataProvider": [
+                {
+                    "date": "2017-01",
+                    "column-1": 8,
+                    "column-2": 5
+                },
+                {
+                    "date": "2017-02",
+                    "column-1": 6,
+                    "column-2": 7
+                },
+                {
+                    "date": "2017-03",
+                    "column-1": 2,
+                    "column-2": 3
+                },
+                {
+                    "date": "2017-04",
+                    "column-1": 1,
+                    "column-2": 3
+                },
+                {
+                    "date": "2017-05",
+                    "column-1": 2,
+                    "column-2": 1
+                },
+                {
+                    "date": "2017-06",
+                    "column-1": 3,
+                    "column-2": 2
+                },
+                {
+                    "date": "2017-07",
+                    "column-1": 6,
+                    "column-2": 8
+                },
+                {
+                    "date": "2017-08",
+                    "column-1": 4,
+                    "column-2": 6
+                },
+                {
+                    "date": "2017-09",
+                    "column-1": 2,
+                    "column-2": 3
+                },
+                {
+                    "date": "2017-10",
+                    "column-1": 4,
+                    "column-2": 4
+                },
+                {
+                    "date": "2017-11",
+                    "column-1": 8,
+                    "column-2": 5
+                },
+                {
+                    "date": "2017-12",
+                    "column-1": 2,
+                    "column-2": 4
+                }
+            ]
+        }
+    );
+</script>
+
+</body>
+
+</html>

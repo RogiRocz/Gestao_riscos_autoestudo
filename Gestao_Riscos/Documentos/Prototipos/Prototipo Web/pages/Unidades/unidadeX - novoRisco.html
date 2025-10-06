@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Riscos UFC</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.css" media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
+        header, main, footer {
+            padding-left: 300px;
+        }
+
+        @media only screen and (max-width : 992px) {
+            header, main, footer {
+                padding-left: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!--MENU LATERAL -->
+<ul class="sidenav sidenav-fixed" id="mobile-demo">
+    <li>
+        <div class="user-view">
+
+            <a href="#!" class="brand-logo"> <img src="../../img/Brasao%20Horizontal%20UFC%20Policromatico1.png" height="60" width="200" /> </a>
+            <div class="background blue">
+            </div>
+
+        </div>
+    </li>
+
+    <ul class="collapsible expandable" id="colap1">
+        <li class="active">
+            <div class="collapsible-header"><i class="material-icons">business</i><h6>Campus Quixadá</h6></div>
+            <div class="collapsible-body">
+                <span>
+                    <ul class="collapsible expandable" id="colap2">
+                        <li><div class="divider"></div></li>
+                        <li class="active white">
+                            <div class="collapsible-header"><i class="material-icons">assignment_late</i>Riscos</div>
+                            <div class="collapsible-body">
+                                <span>
+                                    <ul>
+                                        <li><div class="divider"></div></li>
+                                        <li> <a href="unidadeX%20-%20listarRiscos.html"><i class="material-icons">list</i>Listar Riscos</a></li>
+                                        <li class="active blue lighten-4"> <a href="#!"><i class="material-icons">playlist_add</i>Novo Risco</a></li>
+                                        <li> <a href="unidadeX%20-%20tratarRisco.html"><i class="material-icons">playlist_add_check</i>Analisar Riscos</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </li>
+                        <li><div class="divider"></div></li>
+                        <li class="active white">
+                            <div class="collapsible-header"><i class="material-icons">assignment</i>Processos</div>
+                            <div class="collapsible-body">
+                                <span>
+                                    <ul>
+                                        <li><div class="divider"></div></li>
+                                        <li> <a href="unidadeX%20-%20listarProcessos.html"><i class="material-icons">list</i>Listar Processos</a></li>
+                                        <li> <a href="unidadeX%20-%20novoProcesso.html"><i class="material-icons">playlist_add</i>Novo Processo</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <li><div class="divider"></div></li>
+    <li> <a href="../index.html"><i class="material-icons">arrow_back</i>Voltar</a></li>
+    <li><div class="divider"></div></li>
+</ul>
+
+<!-- BARRA DE NAVEGAÇÂO SUPERIOR -->
+<header>
+    <nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <div class="nav-wrapper blue">
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#!"><i class="material-icons ">notifications</i></a></li>
+                <li><a href="#!"><i class="material-icons ">settings</i></a></li>
+
+                <li><a class="dropdown-trigger" href="#!" data-target="usuario"><i class="material-icons right">account_circle</i>Gestor de Risco</a></li>
+                <ul id="usuario" class="dropdown-content">
+                    <li><a href="#!">Meus Dados</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Sair</a></li>
+                </ul>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- CONTEUDO DA PAGINA -->
+<main class="grey lighten-4">
+
+    <div class="row">
+
+
+        <div class="col s12">
+
+            <div class="divider"></div>
+
+
+            <!-- FOMULARIO PAGE 1 -->
+            <div class="section white">
+
+                <div class="row">
+
+                    <legend class="col s10 offset-s1"><h5>Identificação do Risco</h5></legend>
+
+                </div>
+
+                <div class="row"></div>
+
+                <div class="row">
+
+
+                    <form class="col s10 offset-s1">
+
+
+
+                        <div class="input-field col s12">
+                            <input placeholder="Nome do risco" id="nome" type="text" class="validate">
+                            <label for="nome">Nome </label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <select>
+                                <option value="" disabled selected>Selecione um processo</option>
+                                <option value="1">Capacitação e qualificação de Servidores</option>
+                                <option value="2">Realizar Admissão de Pessoal </option>
+                            </select>
+                            <label>Processo</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <!--<i class="material-icons prefix">textsms</i>-->
+                            <input type="text" id="autocomplete-input" class="autocomplete">
+                            <label for="autocomplete-input">Responsável</label>
+                        </div>
+
+
+                        <label class="col s12"> Fatores de risco</label>
+                        <div class="col s1"></div>
+                        <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Financeiros / Orçamentários" >
+                            <input class="with-gap" name="group1" type="radio" checked />
+                            <span>F/O</span>
+                        </label>
+                        <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Operacionais" >
+                            <input class="with-gap" name="group1" type="radio"/>
+                            <span>O</span>
+                        </label>
+                        <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Legal / de Conformidade" >
+                            <input class="with-gap" name="group1" type="radio"/>
+                            <span>L/C</span>
+                        </label>
+                        <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Imagem / Reputação" >
+                            <input class="with-gap" name="group1" type="radio"/>
+                            <span>I/R</span>
+                        </label>
+                        <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Criticidade" >
+                            <input class="with-gap" name="group1" type="radio"/>
+                            <span>C</span>
+                        </label>
+                        <div class="col s1"></div>
+
+
+                        <div class="input-field col s12">
+                            <textarea id="eventos" class="materialize-textarea"></textarea>
+                            <label for="eventos">Eventos</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <textarea id="causas" class="materialize-textarea"></textarea>
+                            <label for="causas">Causas</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <textarea id="consequencias" class="materialize-textarea"></textarea>
+                            <label for="consequencias">Consequências</label>
+                        </div>
+
+
+                    </form>
+
+                    <div class="col s1"></div>
+
+                </div>
+            </div>
+
+            <!-- FOMULARIO PAGE 2 -->
+            <div class="section white">
+
+                <div class="row">
+                    <legend class="col s10 offset-s1"><h5>Avaliação do Risco</h5></legend>
+                </div>
+
+                <div class="row"></div>
+
+                <div class="row">
+                    <form class="col s10 offset-s1">
+
+                        <div class="row">
+                            <div class="input-field col s2" onchange="myFunction()">
+                                <select id="prob">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <label>Probabilidade</label>
+                            </div>
+
+                            <div class="input-field col s2" onchange="myFunction()">
+                                <select id="imp">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <label>Impacto</label>
+                            </div>
+
+                            <div class="input-field col s2">
+                                <input class="center-align tooltipped" data-position="bottom" data-tooltip="PROBABILIDADE x IMPACTO"  disabled value="1" id="nivelRiscoInerente" type="text" class="validate">
+                                <label class="center" for="nivelRiscoInerente">Nivel de risco inerente</label>
+                            </div>
+
+                            <div class="input-field col s4">
+                                <select>
+                                    <option value="1">1,00 - Praticamente Nenhuma</option>
+                                    <option value="2">0,80 - Fraca</option>
+                                    <option value="3">0,60 - Mediana</option>
+                                    <option value="4">0,40 - Satisfatória</option>
+                                    <option value="5">0,20 - Forte</option>
+                                </select>
+                                <label>Multiplicador de Risco inerente</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="center-align tooltipped" data-position="bottom" data-tooltip="NIVEL DE RISCO INERENTE x MULTIPLICADOR DO RISCO INERENTE" disabled value="1" id="nivelRiscoResidual" type="text" class="validate">
+                                <label class="center" for="nivelRiscoResidual">Nivel de risco residual</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <select>
+                                    <option value="1">Aceitável</option>
+                                    <option value="2">Aceitável com restrições</option>
+                                    <option value="3">Crítico</option>
+                                    <option value="4">Inaceitável</option>
+                                </select>
+                                <label> Classificação do Nivel de Risco Residual</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <select>
+                                    <option value="1">Aceitável</option>
+                                    <option value="2">Aceitável com restrições</option>
+                                    <option value="3">Crítico</option>
+                                    <option value="4">Inaceitável</option>
+                                </select>
+                                <label>Resposta ao Risco</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataTratamento" type="text" class="datepicker">
+                                <label for="dataTratamento"> Data de Tratamento   </label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="observacoes" class="materialize-textarea"></textarea>
+                                <label for="observacoes">Observações</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <a href="#!" class="waves-effect btn btn-large green right"> CADASTRAR </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <!--PAGINAÇÃO-->
+
+
+
+        </div>
+
+    </div>
+
+
+
+</main>
+
+
+<!--RODAPÉ DA PAGINA-->
+<footer></footer>
+
+
+<!--SCRIPT DE ANIMAÇÃO-->
+<script type="text/javascript" src="../../js/materialize.min.js"></script>
+<script> M.AutoInit(); </script>
+<script type="text/javascript" src="../../js/menu.js"></script>
+<script>
+    function myFunction() {
+        let x = document.getElementById("prob");
+        let y = document.getElementById("imp");
+        document.getElementById("nivelRiscoInerente").value = ((x.options[x.selectedIndex]).value * (y.options[y.selectedIndex]).value);
+    }
+
+</script>
+  <script type="text/javascript" src="../../js/autocomplete.js"></script>
+
+
+</body>
+
+</html>

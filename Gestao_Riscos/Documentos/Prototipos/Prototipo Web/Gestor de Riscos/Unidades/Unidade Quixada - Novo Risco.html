@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Riscos</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.css" media="screen,projection"/>
+
+    <link type="text/css" rel="stylesheet" href="../../css/style.css" media="screen,projection">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <!-- Menu Superior -->
+    <div class="navbar-fixed">
+        <nav class="z-depth-0 blue">
+            <div class="nav-wrapper blue">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <ul id="nav-mobile" class="right">
+                    <li>
+                        <a href="#!" data-target="notificacoes" class="dropdown-trigger waves-effect ">
+                            <i class="material-icons right">notifications</i>
+                            <span class="new badge light-blue darken-4">2</span>
+                        </a>
+                    </li>
+
+                    <li><a href="#!"><i class="material-icons">settings</i></a></li>
+
+                    <!-- Abrir Dropdown Usuario -->
+                    <li>
+                        <a class="dropdown-trigger waves-effect" href="#!" data-target="account">
+                            <i class="material-icons left">account_circle</i>
+                            Gestor de Riscos
+                            <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Dropdown Usuario -->
+    <ul id="account" class="dropdown-content dropdown-content-menu">
+        <li><a href="#!"><i class="material-icons left">account_box</i>Meu Perfil</a></li>
+
+        <li class="divider"></li>
+        <li><a href="#!"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+    </ul>
+
+    <!-- Dropdown Notificações -->
+    <div id="notificacoes" class="dropdown-content dropdown-content-menu notifications">
+        <div class="notifications-title">Notificações</div>
+
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title red-text">Aviso</span>
+                <p>Risco <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de tratatamento</p>
+            </div>
+            <div class="card-action ">
+                <a href="Unidade%20Quixada%20-%20Analisar%20Riscos.html" class="blue-text">Visualizar</a>
+                <a href="#!" class="blue-text">Remover</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title red-text">Aviso</span>
+                <p>Risco <span class="amber-text text-darken-2">Redução orçamentária dos recursos destinados à capacitação</span> ainda não tem um plano de contigência</p>
+            </div>
+            <div class="card-action">
+                <a href="Unidade%20Quixada%20-%20Analisar%20Riscos.html" class="blue-text">Visualizar</a>
+                <a href="#!" class="blue-text">Remover</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Menu Lateral-->
+    <ul class="sidenav sidenav-fixed sidenav-modificado z-depth-0 grey lighten-4" id="mobile-demo" style="transform: translateX(0px);">
+        <li>
+            <div class="user-view">
+                <a href="../index.html">
+                    <img src="../../img/Brasao%20Horizontal%20UFC%20Policromatico1.png">
+                </a>
+            </div>
+        </li>
+
+        <div class="divider blue"></div>
+
+        <li class="no-padding">
+            <ul class="collapsible expandable">
+
+                <li><div class="divider grey lighten-4"></div></li>
+
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">business</i><h6>Campus Quixadá</h6></div>
+                </li>
+
+                <li><div class="divider"></div></li>
+
+                <li class="active">
+                    <div class="collapsible-header">
+                        <i class="material-icons">assignment_late</i>Riscos<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            <ul class="grey lighten-4">
+                                <li><div class="divider" style="margin-top: 0"></div></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Listar%20Riscos.html"><i class="material-icons">list</i>Listar Riscos</a></li>
+                                <li class="active blue lighten-4"> <a href="Unidade%20Quixada%20-%20Novo%20Risco.html"><i class="material-icons">playlist_add</i>Novo Risco</a></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Analisar%20Riscos.html"><i class="material-icons">playlist_add_check</i>Analisar Riscos</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </li>
+
+                <li><div class="divider" style="margin-top: 0"></div></li>
+
+                <li>
+                    <div class="collapsible-header">
+                        <i class="material-icons">assignment</i>Processos<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            <ul class="grey lighten-4">
+                                <li><div class="divider" style="margin-top: 0"></div></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Listar%20Processo.html"><i class="material-icons">list</i>Listar Processos</a></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Novo%20Processo.html"><i class="material-icons">playlist_add</i>Novo Processo</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </li>
+                <li><div class="divider" style="margin-top: 0"></div></li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="material-icons">assignment</i>Comunicação<i class="material-icons arrow-rotate">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            <ul class="grey lighten-4">
+                                <li><div class="divider" style="margin-top: 0"></div></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Listar%20Comunicacao.html"><i class="material-icons">list</i>Listar Comunicações</a></li>
+                                <li> <a href="Unidade%20Quixada%20-%20Nova%20Comunicacao.html"><i class="material-icons">playlist_add</i>Nova Comunicação</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </li>
+                <li><div class="divider" style="margin-top: 0"></div></li>
+
+            </ul>
+        </li>
+    </ul>
+    <a class="sidenav-item-bottom" href="../index.html" class="_default_"><i class="material-icons left">keyboard_backspace</i>Pagina inicial</a>
+
+
+
+
+</header>
+
+<!-- Conteudo da pagina-->
+<main class="row">
+    <div class="col s12">
+
+        <!-- Titulo -->
+        <div class="card z-depth-0" >
+            <div class="card-content row no-padding">
+                <span class="col s12">
+                    <h4>Novo Risco</h4>
+                </span>
+
+            </div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="card">
+            <form class="section white">
+
+                <div class="row">
+                    <legend class="col s10 offset-s1"><h5>Identificação do Risco</h5></legend>
+                </div>
+
+                <div class="row">
+                    <div class="col s10 offset-s1">
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Nome do risco" id="nome" type="text" class="validate">
+                                <label for="nome">Nome </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <select>
+                                    <option value="" disabled selected>Selecione um processo</option>
+                                    <option value="1">Capacitação e qualificação de Servidores</option>
+                                    <option value="2">Realizar Admissão de Pessoal </option>
+                                </select>
+                                <label>Processo</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <!--<i class="material-icons prefix">textsms</i>-->
+                                <input type="text" id="autocomplete-input" class="autocomplete">
+                                <label for="autocomplete-input">Responsável</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <label class="col s12"> Fatores de risco</label>
+                        </div>
+                        <div class="row">
+
+                            <div class="col s1"></div>
+                            <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Financeiros / Orçamentários" >
+                                <input class="with-gap" name="group1" type="radio" checked />
+                                <span>F/O</span>
+                            </label>
+                            <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Operacionais" >
+                                <input class="with-gap" name="group1" type="radio"/>
+                                <span>O</span>
+                            </label>
+                            <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Legal / de Conformidade" >
+                                <input class="with-gap" name="group1" type="radio"/>
+                                <span>L/C</span>
+                            </label>
+                            <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Imagem / Reputação" >
+                                <input class="with-gap" name="group1" type="radio"/>
+                                <span>I/R</span>
+                            </label>
+                            <label class="col s2 tooltipped" data-position="bottom" data-tooltip="Criticidade" >
+                                <input class="with-gap" name="group1" type="radio"/>
+                                <span>C</span>
+                            </label>
+                            <div class="col s1"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="eventos" class="materialize-textarea"></textarea>
+                                <label for="eventos">Eventos</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="input-field col s12">
+                                <textarea id="causas" class="materialize-textarea"></textarea>
+                                <label for="causas">Causas</label>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="input-field col s12">
+                                <textarea id="consequencias" class="materialize-textarea"></textarea>
+                                <label for="consequencias">Consequências</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <legend class="col s10 offset-s1"><h5>Avaliação do Risco</h5></legend>
+                </div>
+
+                <div class="row">
+                    <div class="col s10 offset-s1">
+
+
+
+
+                        <div class="row">
+                            <div class="input-field col s2" onchange="myFunction()">
+                                <select id="prob">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <label>Probabilidade</label>
+                            </div>
+
+                            <div class="input-field col s2" onchange="myFunction()">
+                                <select id="imp">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <label>Impacto</label>
+                            </div>
+
+                            <div class="input-field col s2">
+                                <input class="center-align tooltipped" data-position="bottom" data-tooltip="PROBABILIDADE x IMPACTO"  disabled value="1" id="nivelRiscoInerente" type="text" class="validate">
+                                <label class="center" for="nivelRiscoInerente">Nivel de risco inerente</label>
+                            </div>
+
+                            <div class="input-field col s4" onchange="myFunction()">
+                                <select id="multiplicador">
+                                    <option value="1.0">1,00 - Praticamente Nenhuma</option>
+                                    <option value="0.8">0,80 - Fraca</option>
+                                    <option value="0.6">0,60 - Mediana</option>
+                                    <option value="0.4">0,40 - Satisfatória</option>
+                                    <option value="0.2">0,20 - Forte</option>
+                                </select>
+                                <label>Multiplicador de Risco inerente</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="center-align tooltipped" data-position="bottom" data-tooltip="NIVEL DE RISCO INERENTE x MULTIPLICADOR DO RISCO INERENTE" disabled value="1" id="nivelRiscoResidual" type="text" class="validate">
+                                <label class="center" for="nivelRiscoResidual">Nivel de risco residual</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <select>
+                                    <option value="1">Aceitável</option>
+                                    <option value="2">Aceitável com restrições</option>
+                                    <option value="3">Crítico</option>
+                                    <option value="4">Inaceitável</option>
+                                </select>
+                                <label> Classificação do Nivel de Risco Residual</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <select>
+                                    <option value="1">Aceitável</option>
+                                    <option value="2">Aceitável com restrições</option>
+                                    <option value="3">Crítico</option>
+                                    <option value="4">Inaceitável</option>
+                                </select>
+                                <label>Resposta ao Risco</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataTratamento" type="text" class="datepicker">
+                                <label for="dataTratamento"> Data da Avaliação </label>
+                            </div>
+                            <div class="input-field col s6" onchange="myFunction()">
+                                <select>
+                                    <option value="1">Ameaça</option>
+                                    <option value="2">Oportunidade</option>
+                                </select>
+                                <label>Tipo do risco</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="observacoes" class="materialize-textarea"></textarea>
+                                <label for="observacoes">Observações</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col s12 ">
+                                <a href="#!" class="waves-effect btn btn-large green right"><i class="material-icons right">send</i> CADASTRAR </a>
+                                <a href="Unidade%20Quixada%20-%20Listar%20Riscos.html" class="waves-effect btn btn-large red left"><i class="material-icons left">cancel</i>CANCELAR</a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</main>
+
+
+
+<!--SCRIPT DE ANIMAÇÃO-->
+<script type="text/javascript" src="../../js/materialize.js"></script>
+<script>
+    M.AutoInit();
+</script>
+<script type="text/javascript" src="../../js/menu.js"></script>
+<script>
+    function myFunction() {
+        let x = document.getElementById("prob");
+        let y = document.getElementById("imp");
+        let z = document.getElementById("multiplicador");
+        document.getElementById("nivelRiscoInerente").value = ((x.options[x.selectedIndex]).value * (y.options[y.selectedIndex]).value);
+        document.getElementById("nivelRiscoResidual").value = parseFloat((document.getElementById("nivelRiscoInerente").value) * (z.options[z.selectedIndex]).value).toFixed(2);
+    }
+</script>
+<script type="text/javascript" src="../../js/autocomplete.js"></script>
+
+
+</body>
+
+</html>

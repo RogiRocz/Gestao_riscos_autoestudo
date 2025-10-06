@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Riscos UFC</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.css" media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
+        header, main, footer {
+            padding-left: 300px;
+        }
+
+        @media only screen and (max-width : 992px) {
+            header, main, footer {
+                padding-left: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!--MENU LATERAL -->
+<ul class="sidenav sidenav-fixed" id="mobile-demo">
+    <li>
+        <div class="user-view">
+
+            <a href="#!" class="brand-logo"> <img src="../../img/Brasao%20Horizontal%20UFC%20Policromatico1.png" height="60" width="200" /> </a>
+            <div class="background blue">
+            </div>
+
+        </div>
+    </li>
+
+    <ul class="collapsible expandable" id="colap1">
+        <li class="active">
+            <div class="collapsible-header"><i class="material-icons">business</i><h6>Campus Quixadá</h6></div>
+            <div class="collapsible-body">
+                <span>
+                    <ul class="collapsible expandable" id="colap2">
+                        <li><div class="divider"></div></li>
+                        <li class="active white">
+                            <div class="collapsible-header"><i class="material-icons">assignment_late</i>Riscos</div>
+                            <div class="collapsible-body">
+                                <span>
+                                    <ul>
+                                        <li><div class="divider"></div></li>
+                                        <li> <a href="unidadeX%20-%20listarRiscos.html"><i class="material-icons">list</i>Listar Riscos</a></li>
+                                        <li> <a href="unidadeX%20-%20novoRisco.html"><i class="material-icons">playlist_add</i>Novo Risco</a></li>
+                                        <li> <a href="unidadeX%20-%20tratarRisco.html"><i class="material-icons">playlist_add_check</i>Analisar Riscos</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </li>
+                        <li><div class="divider"></div></li>
+                        <li class="active white">
+                            <div class="collapsible-header"><i class="material-icons">assignment</i>Processos</div>
+                            <div class="collapsible-body">
+                                <span>
+                                    <ul>
+                                        <li><div class="divider"></div></li>
+                                        <li> <a href="unidadeX%20-%20listarProcessos.html"><i class="material-icons">list</i>Listar Processos</a></li>
+                                        <li class="active blue lighten-4"> <a href="unidadeX%20-%20novoProcesso.html"><i class="material-icons">playlist_add</i>Novo Processo</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <li><div class="divider"></div></li>
+    <li> <a href="../index.html"><i class="material-icons">arrow_back</i>Voltar</a></li>
+    <li><div class="divider"></div></li>
+</ul>
+
+<!-- BARRA DE NAVEGAÇÂO SUPERIOR -->
+<header>
+    <nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <div class="nav-wrapper blue">
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#!"><i class="material-icons ">notifications</i></a></li>
+                <li><a href="#!"><i class="material-icons ">settings</i></a></li>
+
+                <li><a class="dropdown-trigger" href="#!" data-target="usuario"><i class="material-icons right">account_circle</i>Gestor de Risco</a></li>
+                <ul id="usuario" class="dropdown-content">
+                    <li><a href="#!">Meus Dados</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Sair</a></li>
+                </ul>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- CONTEUDO DA PAGINA -->
+<main class="grey lighten-4">
+
+    <div class="row">
+
+
+        <div class="col s12">
+
+            <div class="divider"></div>
+
+
+            <!-- FOMULARIO PAGE 1 -->
+            <div class="section white">
+
+                <div class="row">
+
+                    <legend class="col s10 offset-s1"><h5>Dados do Processo</h5></legend>
+
+                </div>
+                <div class="row">
+
+
+                    <form class="col s10 offset-s1">
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Informações Gerais</h6></legend>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Nome do processo" id="nome" type="text" class="validate">
+                                <label for="nome">Nome </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="descricaoProcesso" placeholder="Descrição do Processo" class="materialize-textarea"></textarea>
+                                <label for="descricaoProcesso">Descrição do Processo</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="alinhamento" placeholder="Alinhamento Estratégico" class="materialize-textarea"></textarea>
+                                <label for="alinhamento">Alinhamento Estratégico</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <label for="atividades" class="col s12">Atividades que compõem o processo</label>
+                            <div class="col s12 chips">
+                                <input id="atividades" placeholder="adicionar" class="custom-class">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>Diagrama</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Click aqui para inserir o diagrama">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Agentes do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Fornecedores" id="forncedoresProcesso" type="text">
+                                <label for="forncedoresProcesso">Forncedores do Processo </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Entradas" id="entradasProcesso" type="text">
+                                <label for="entradasProcesso">Entradas </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Clientes" id="clientesProcesso" type="text">
+                                <label for="clientesProcesso">Clientes </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Saídas" id="saidassProcesso" type="text">
+                                <label for="saidassProcesso">Saídas </label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Indicadores do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Nome do Indicador" id="indicadoresProcesso" type="text">
+                                <label for="indicadoresProcesso">Indicadores do Processo </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Forma de Medição" id="medicaoProcesso" type="text">
+                                <label for="medicaoProcesso">Forma de Medição </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Responsável pela Medição" id="responsavelMedicaoProcesso" type="text">
+                                <label for="responsavelMedicaoProcesso">Responsável pela medição </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Perido para Realizar a Medição" id="dataMedicaoProcesso" type="text">
+                                <label for="dataMedicaoProcesso">Perido para Realizar a Medição</label>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+                <div class="row">
+
+                    <legend class="col s10 offset-s1"><h5>Dados dos Responsáveis</h5></legend>
+
+                </div>
+                <div class="row">
+
+
+                    <form class="col s10 offset-s1">
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Gerente do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Nome do Gerente" id="nomeGerente" type="text" class="validate">
+                                <label for="nomeGerente">Nome do Gerente </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <select>
+                                    <option value="" disabled selected>Selecione o cargo</option>
+                                    <option value="1">Coordenador</option>
+                                    <option value="2">Gestor</option>
+                                    <option value="3">Secretario</option>
+                                </select>
+                                <label>Cargo</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input id="email" type="email" class="validate" placeholder="email@email.com">
+                                <label for="email">Email</label>
+                                <span class="helper-text" data-error="Email invalido" data-success="Email Valido"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Dados da Equipe</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <textarea id="responsabilidadeEquipe" placeholder="Responsabilidade da Equipe" class="materialize-textarea"></textarea>
+                              <label for="responsabilidadeEquipe">Responsabilidade da Equipe</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <textarea id="principaisAtividades" placeholder="Principais Atividades" class="materialize-textarea"></textarea>
+                              <label for="principaisAtividades">Principais Atividades</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="input-field col s6">
+
+                                <input type="text" id="gerenteEquipe" class="autocomplete">
+                                <label for="gerenteEquipe">Gerente</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input type="text" id="gerenteSubstitutoEquipe" class="autocomplete">
+                                <label for="gerenteSubstitutoEquipe">Gerente Substituto</label>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="row">
+                            <label for="integrantesEquipe" class="col s12">Integrantes</label>
+                            <div class="col s12 chips chips-autocomplete" id="integrantesEquipe">
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div class="col s1"></div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <legend class="col s10 offset-s1"><h5>Cronograma do Mapeamento</h5></legend>
+
+                </div>
+                <div class="row">
+
+
+                    <form class="col s10 offset-s1">
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Mapeamento do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataMapeamentoInicio" type="text" class="datepicker">
+                                <label for="dataMapeamentoInicio"> Início </label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataMapeamentoFim" type="text" class="datepicker">
+                                <label for="dataMapeamentoFim"> Término </label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Reuniões de Mapeamento</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataReunioesInicio" type="text" class="datepicker">
+                                <label for="dataReunioesInicio"> Início </label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataReunioesFim" type="text" class="datepicker">
+                                <label for="dataReunioesFim"> Término  </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <legend class="col s12"><h6>Validação do Fluxo do Processo</h6></legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataValidacaoInicio" type="text" class="datepicker">
+                                <label for="dataValidacaoInicio"> Início </label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">date_range</i>
+                                <input id="dataValidacaoFim" type="text" class="datepicker">
+                                <label for="dataValidacaoFim"> Término  </label>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+
+                    <div class="col s1"></div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <div class="row">
+                            <div class="col s12">
+                                <a href="#!" class="waves-effect btn btn-large green right"> CADASTRAR </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</main>
+
+
+<!--RODAPÉ DA PAGINA-->
+<footer>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large blue">
+            <i class="large material-icons">save</i>
+        </a>
+    </div>
+
+
+
+</footer>
+
+
+<!--SCRIPT DE ANIMAÇÃO-->
+<script type="text/javascript" src="../../js/materialize.min.js"></script>
+<script> M.AutoInit(); </script>
+<script type="text/javascript" src="../../js/menu.js"></script>
+<script>
+    function myFunction() {
+        let x = document.getElementById("prob");
+        let y = document.getElementById("imp");
+        document.getElementById("nivelRiscoInerente").value = ((x.options[x.selectedIndex]).value * (y.options[y.selectedIndex]).value);
+        document.getElementById("nivelRiscoInerente").value = ((x.options[x.selectedIndex]).value * (y.options[y.selectedIndex]).value);
+    }
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.autocomplete');
+        var instances = M.Autocomplete.init(elems, {
+                data: {
+                    "Gleydson Pinto": null,
+                    "João Pedro": null,
+                    "Germana Silva": null
+                }
+        });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.chips');
+        var instances = M.Chips.init(elems, {
+            autocompleteOptions : {
+                data: {
+                    "Gleydson Pinto": null,
+                    "João Pedro": null,
+                    "Germana Silva": null
+                }
+            }
+        });
+    });
+</script>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+</body>
+
+</html>

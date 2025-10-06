@@ -1,0 +1,73 @@
+version: '2'
+
+networks:
+  web:
+    external: true
+  internal:
+    external: false
+
+
+services:
+  db:
+    container_name: riscos_db
+    image: postgres:9.6.11
+    environment:
+      - POSTGRES_USER=${RISCOS_USER}
+      - POSTGRES_PASSWORD=${RISCOS_PASSWORD}
+      - POSTGRES_DB=${RISCOS_DB}
+    volumes:
+      - /opt/sistemas/riscos/data:/var/lib/postgresql/data
+      - ./app/db/script.sql:/docker-entrypoint-initdb.d/script.sql
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 5535:5432
+    networks:
+      - internal
+      - web
+
+
+  back:
+    container_name: riscos_back
+    image: tomcat:9.0.12-jre8
+    depends_on:
+      - db
+    environment:
+      - CATALINA_OPTS=-DRISCOS_USER=${RISCOS_USER} -DRISCOS_PASSWORD=${RISCOS_PASSWORD} -DRISCOS_URL=${RISCOS_URL}
+    volumes:
+      - ./Codigo/back-gestao-riscos/target/ROOT.war:/usr/local/tomcat/webapps/ROOT.war
+      - ./Codigo/back-gestao-riscos/target/ROOT:/usr/local/tomcat/webapps/ROOT
+      - ./app/conf/context.xml:/usr/local/tomcat/conf/context.xml
+      - ./app/conf/web.xml:/usr/local/tomcat/conf/web.xml
+      - ./app/lib/javax.mail.jar:/usr/local/tomcat/lib/javax.mail.jar
+      - ./app/lib/postgresql-42.2.6.jar:/usr/local/tomcat/lib/postgresql-42.2.6.jar
+      - /etc/localtime:/etc/localtime:ro
+    labels:
+      - "traefik.backend=back"
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:riscos.quixada.ufc.br; PathPrefixStrip: /api"
+      - "traefik.enable=true"
+      - "traefik.port=8080"
+      - "traefik.default.protocol=http"
+    networks:
+      - internal
+      - web
+
+  front:
+    container_name: riscos_front
+    image: nginx:1.17-alpine
+    depends_on:
+      - back
+    volumes:
+      - ./app/conf/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./Codigo/front-gestao-riscos/dist:/usr/share/nginx/html
+      - /etc/localtime:/etc/localtime:ro
+    labels:
+      - "traefik.backend=front"
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:riscos.quixada.ufc.br"
+      - "traefik.enable=true"
+      - "traefik.port=80"
+      - "traefik.default.protocol=http"
+    networks:
+      - internal
+      - web
