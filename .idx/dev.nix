@@ -5,7 +5,7 @@
   # Pacotes de sistema para o ambiente de desenvolvimento.
   packages = [
     # Dependências do Backend (Java/Maven)
-    pkgs.jdk11
+    pkgs.jdk8
     pkgs.maven
     
     # Dependências do Frontend (Vue.js)
@@ -15,8 +15,16 @@
     pkgs.postgresql
     pkgs.git
     pkgs.docker-compose
-
   ];
+
+  services.docker.enable = true;
+
+  env = {
+    SPRING_DATASOURCE_URL = "jdbc:postgresql://localhost:5532/riscos_db";
+    SPRING_DATASOURCE_USERNAME = "postgres";
+    SPRING_DATASOURCE_PASSWORD = "postgres";
+  };
+
 
   # Extensões do VS Code para melhorar a experiência de desenvolvimento.
   idx.extensions = [
@@ -44,6 +52,8 @@
     
     # Comandos a serem executados toda vez que o workspace for iniciado.
     onStart = {
+      # Inicia o docker para se conectar ao BD
+      star-database = "(cd Gestao_Riscos/dev && docker compose up -d)";
       # Inicia a aplicação backend Spring Boot.
       start-backend = "(cd Gestao_Riscos/Codigo/back-gestao-riscos && mvn spring-boot:run)";
       # O frontend será iniciado pelo serviço de preview abaixo.
