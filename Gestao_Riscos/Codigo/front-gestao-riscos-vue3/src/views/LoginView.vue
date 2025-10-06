@@ -69,7 +69,6 @@ const password = ref('');
 
 function handleLogin() {
 	const response = getUser(login.value, password.value);
-	console.log(response)
 }
 </script>
 

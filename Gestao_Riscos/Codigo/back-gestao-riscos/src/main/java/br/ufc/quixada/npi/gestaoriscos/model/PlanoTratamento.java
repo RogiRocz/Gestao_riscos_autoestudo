@@ -38,6 +38,7 @@ public class PlanoTratamento {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataPlanejamento;
 
+    @Column(nullable = false, columnDefinition = "boolean default false")
     private boolean status;
 
     @OrderBy("status ASC")
