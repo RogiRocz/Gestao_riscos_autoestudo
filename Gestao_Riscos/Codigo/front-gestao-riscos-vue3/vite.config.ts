@@ -7,22 +7,23 @@ import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
-  plugins: [
-    vue({
-      template: { transformAssetUrls },
-    }),
-    vuetify({
-      autoImport: true,
-    }),
-  ],
-  define: { 'process.env': {} },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
-  },
-  server: {
-    host: '0.0.0.0',
-  },
+	plugins: [
+		vue({
+			template: { transformAssetUrls },
+		}),
+		vuetify({
+			autoImport: true,
+		}),
+	],
+	define: { 'process.env': {} },
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
+		},
+		extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
+	},
+	server: {
+		port: 8080,
+		host: '0.0.0.0',
+	},
 });

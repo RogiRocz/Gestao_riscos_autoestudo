@@ -158,4 +158,19 @@ public class Usuario implements UserDetails {
 		this.roles = roles;
 	}
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", habilitado=" + habilitado +
+                ", unidade=" + unidade +
+                ", roles=" + roles +
+                '}';
+
+    }
+
 }
