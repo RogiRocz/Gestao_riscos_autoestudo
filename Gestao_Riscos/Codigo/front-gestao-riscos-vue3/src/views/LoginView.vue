@@ -57,7 +57,7 @@
 </template>
 
 <script lang="ts" setup>
-import { getUser } from '@/api/usersRepository';
+import { authLogin, getAllUsers } from '@/api/usersRepository';
 import BoxImage from '@/components/BoxImage.vue';
 import { rules } from '@/utils/rulesInput';
 import { ref } from 'vue';
@@ -67,8 +67,10 @@ const imgForm = 'favicon.ico';
 const login = ref('');
 const password = ref('');
 
-function handleLogin() {
-	const response = getUser(login.value, password.value);
+async function handleLogin() {
+	const credentials = await authLogin(login.value, password.value);
+
+
 }
 </script>
 

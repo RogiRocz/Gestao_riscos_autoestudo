@@ -1,18 +1,30 @@
-import axios from 'axios';
+import axios, { type AxiosInstance } from 'axios';
 
-const urlBase = import.meta.env.VITE_URL_BASE;
-const urlPort = import.meta.env.VITE_URL_PORT;
+const urlBase: string = import.meta.env.VITE_URL_BASE;
+const urlPort: string = import.meta.env.VITE_URL_PORT;
 
-const api = axios.create({
-	baseURL: `${urlBase}:${urlPort}`,
-});
+let api: AxiosInstance;
 
-api.interceptors.request.use((config) => {
-	console.log('config da requisição: ', config);
-	return config;
-}, (error) => {
-	console.log('Erro ao enviar a requisição: ', error);	
-	Promise.reject(error)
-});
+if (urlBase.includes('firebase')) {
+	api = axios.create({
+		baseURL: `${urlBase}`,
+	});
+} else {
+	// urlBase = localhost
+	api = axios.create({
+		baseURL: `${urlBase}:${urlPort}`,
+	});
+}
+
+api.interceptors.request.use(
+	(config) => {
+		console.log('config da requisição: ', config);
+		return config;
+	},
+	(error) => {
+		console.log('Erro ao enviar a requisição: ', error);
+		Promise.reject(error);
+	},
+);
 
 export default api;

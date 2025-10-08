@@ -1,8 +1,12 @@
 interface Login {
-    email: string,
-    password: string,
+	email: string;
+	password: string;
 }
 
-export type {
-    Login
+interface Credentials {
+	nome: string;
+	email: string;
+	token: string;
 }
+
+export type { Login, Credentials };
