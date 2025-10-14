@@ -57,10 +57,11 @@
 </template>
 
 <script lang="ts" setup>
-import { authLogin, getAllUsers } from '@/api/usersRepository';
+import { authLogin } from '@/api/usersRepository';
 import BoxImage from '@/components/BoxImage.vue';
 import { rules } from '@/utils/rulesInput';
 import { ref } from 'vue';
+import router from '@/router/index';
 
 const imgForm = 'favicon.ico';
 
@@ -70,6 +71,9 @@ const password = ref('');
 async function handleLogin() {
 	const credentials = await authLogin(login.value, password.value);
 
+	if (credentials != null) {
+		await router.push('admin');
+	}
 
 }
 </script>
